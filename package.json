@@ -1,6 +1,6 @@
 {
   "name": "vm-operation-portal",
-  "version": "0.1.0",
+  "version": "0.1.1-rc.3",
   "private": false,
   "description": "",
   "homepage": "https://github.com/ArcMichael/vm-operation-portal#readme",
@@ -14,8 +14,16 @@
   "scripts": {
     "add": "git add .",
     "commit": "git-cz",
+    "commitlint": "commitlint --config commitlint.config.js -e -V",
+    "push": "git push",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "dev": "next dev",
     "build": "next build",
+    "prepare": "npx husky install",
+    "lint-staged": "lint-staged",
+    "release": "standard-version -- --release-as patch && git push --follow-tags origin main && npm publish --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/hosted-npm/",
+    "release:alpha": "standard-version --prerelease alpha",
+    "release:rc": "standard-version --prerelease rc",
     "start": "next start",
     "lint": "next lint"
   },
@@ -65,6 +73,11 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "commitizen": "^4.3.0"
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "lint-staged": "^13.2.0",
+    "standard-version": "^9.5.0"
   }
 }
