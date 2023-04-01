@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nextjs:
+    container_name: nextjs
+    # image: 192.168.3.200:80/library/node:19.8.1
+    privileged: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    dns: 192.168.3.210
+    extra_hosts:
+      - "nexus.dependency.in.mly0110.org.cn:192.168.3.200"
