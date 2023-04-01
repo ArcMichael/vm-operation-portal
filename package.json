@@ -1,6 +1,6 @@
 {
   "name": "vm-operation-portal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "",
   "homepage": "https://github.com/ArcMichael/vm-operation-portal#readme",
@@ -78,6 +78,7 @@
     "@commitlint/config-conventional": "^17.4.4",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "sort-package-json": "^2.4.1",
     "standard-version": "^9.5.0"
