@@ -13,19 +13,20 @@
   },
   "scripts": {
     "add": "git add .",
+    "build": "next build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "commit": "git-cz",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
-    "push": "git push",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "dev": "next dev",
-    "build": "next build",
-    "prepare": "npx husky install",
+    "lint": "next lint",
     "lint-staged": "lint-staged",
+    "prepare": "npx husky install",
+    "push": "git push",
     "release": "standard-version -- --release-as patch && git push --follow-tags origin main && npm publish --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/hosted-npm/",
     "release:alpha": "standard-version --prerelease alpha",
     "release:rc": "standard-version --prerelease rc",
-    "start": "next start",
-    "lint": "next lint"
+    "sort": "npx sort-package-json",
+    "start": "next start"
   },
   "husky": {
     "hooks": {
@@ -78,6 +79,10 @@
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "lint-staged": "^13.2.0",
+    "sort-package-json": "^2.4.1",
     "standard-version": "^9.5.0"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.dependency.in.mly0110.org.cn:8081/repository/hosted-npm/"
   }
 }
