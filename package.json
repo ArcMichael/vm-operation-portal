@@ -1,12 +1,57 @@
 {
   "name": "vm-operation-portal",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "",
+  "homepage": "https://github.com/ArcMichael/vm-operation-portal#readme",
+  "bugs": {
+    "url": "https://github.com/ArcMichael/vm-operation-portal/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArcMichael/vm-operation-portal.git"
+  },
   "scripts": {
+    "add": "git add .",
+    "commit": "git-cz",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,jsx}": [
+      "npm run lint",
+      "npm run format"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testEnvironment": "node",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    }
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -18,5 +63,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0"
   }
 }

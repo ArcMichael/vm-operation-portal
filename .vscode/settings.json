@@ -1,0 +1,15 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // 默认使用prettier格式化支持的文件
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // 自动设定eslint工作区
+    "eslint.workingDirectories": [
+        { "mode": "auto" }
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    
+}
