@@ -8,7 +8,7 @@ COPY . /usr/src/app/
 
 # RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
-RUN npm config set registry http://192.168.3.200:8081/repository/group-npm/
+RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
 #  --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
@@ -16,6 +16,7 @@ RUN npm config set registry http://192.168.3.200:8081/repository/group-npm/
 # RUN npm install @nestjs/cli -g
 
 # npm install dependency
+# RUN npm install --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 RUN npm install
 
 RUN npm run build
