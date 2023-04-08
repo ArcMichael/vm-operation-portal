@@ -18,6 +18,8 @@
     "commit": "git-cz",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
     "dev": "next dev",
+    "format": "prettier --write \"src/**/*.tsx\" \"src/**/*.ts\"",
+    "lint": "next lint",
     "lint-staged": "lint-staged",
     "prepare": "npx husky install",
     "push": "git push",
@@ -25,9 +27,7 @@
     "release:alpha": "standard-version --prerelease alpha",
     "release:rc": "standard-version --prerelease rc",
     "sort": "npx sort-package-json",
-    "start": "next start",
-    "format": "prettier --write \"src/**/*.tsx\" \"src/**/*.ts\"",
-    "lint": "next lint"
+    "start": "next start"
   },
   "husky": {
     "hooks": {
