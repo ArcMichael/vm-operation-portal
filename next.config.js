@@ -6,6 +6,12 @@ const nextConfig = {
   },
   eslint: {
     dirs: ['pages']
+  },
+  assetPrefix: '/portal',
+  rewrites() {
+    return [
+      { source: '/portal/_next/:path*', destination: '/_next/:path*' }
+    ]
   }
 }
 
