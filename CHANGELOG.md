@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.4...v0.1.5) (2023-04-22)
+
+
+### Features
+
+* **contentpath:** contentpath ([ffcdff0](https://github.com/ArcMichael/vm-operation-portal/commit/ffcdff07fd765026e923aeb424f05e67671b2272))
+* **ttest:** test ([6028f82](https://github.com/ArcMichael/vm-operation-portal/commit/6028f8293d6a4bdcebe3f3afbc1d1028723590bf))
+
 ### [0.1.4](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.3...v0.1.4) (2023-04-13)
 
 
