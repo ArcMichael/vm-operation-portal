@@ -1,3 +1,4 @@
+import React from "react";
 import { LayoutJustifyComponent } from "@/components/Layout";
 import { Button, Result } from "antd";
 

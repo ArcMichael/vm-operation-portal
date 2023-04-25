@@ -1,6 +1,6 @@
 import { PureComponent } from "react";
 import { Layout } from "antd";
-import { SiderCommonComponent } from "../Slider";
+import { SiderCommonComponent } from "../Sider";
 import { ContentCommonComponent } from "../Content";
 import { HeaderCommonComponent } from "../Header";
 import { FooterCommonComponent } from "../Footer";

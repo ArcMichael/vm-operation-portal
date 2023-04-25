@@ -1,3 +1,4 @@
+import React from "react";
 import { LayoutCommonComponent } from "@/components/Layout";
 import { Button, Result } from "antd";
 

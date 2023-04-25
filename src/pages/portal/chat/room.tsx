@@ -1,6 +1,6 @@
+import React from "react";
 import { LayoutCommonComponent } from "@/components/Layout";
-import { Button, Input } from "antd";
 
-const ChatRoom: React.FC = () => <div>123\n123\n123\n123\n123\n123\n123\n</div>;
+const ChatRoom: React.FC = () => <div>CHAT_ROOM</div>;
 
 export default LayoutCommonComponent(ChatRoom);
