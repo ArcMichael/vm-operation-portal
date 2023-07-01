@@ -1,37 +1,21 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
-import { getAnalyticsService } from "@/lib";
-
-const options = {
+const KeycloakConfig = {
   clientId: "portal",
-  clientSecret: "Ye5hCXHMxCRENTPVZ6Bs2Rt8GKAzre7F",
+  clientSecret: "OqCLEpNBdbBlbouNOxLlvHaD7RPc62Gl",
   issuer: "https://sso.mly0110.org.cn:8443/auth/realms/GEN10/",
 };
+
+// KEYCLOAK_ID=portal
+// KEYCLOAK_SECRET=Ye5hCXHMxCRENTPVZ6Bs2Rt8GKAzre7F
+// KEYCLOAK_ISSUER=https://sso.mly0110.org.cn:8443/auth/realms/
+
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export const authOptions: NextAuthOptions = {
   // https://next-auth.js.org/configuration/providers/oauth
-  providers: [
-    /* EmailProvider({
-         server: process.env.EMAIL_SERVER,
-         from: process.env.EMAIL_FROM,
-       }),
-    // Temporarily removing the Apple provider from the demo site as the
-    // callback URL for it needs updating due to Vercel changing domains
-
-    Providers.Apple({
-      clientId: process.env.APPLE_ID,
-      clientSecret: {
-        appleId: process.env.APPLE_ID,
-        teamId: process.env.APPLE_TEAM_ID,
-        privateKey: process.env.APPLE_PRIVATE_KEY,
-        keyId: process.env.APPLE_KEY_ID,
-      },
-    }),
-    */
-    KeycloakProvider(options),
-  ],
+  providers: [KeycloakProvider(KeycloakConfig)],
   theme: {
     colorScheme: "auto",
     brandColor: "", // Hex color code
