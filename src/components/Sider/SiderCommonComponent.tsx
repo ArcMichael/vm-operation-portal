@@ -17,17 +17,17 @@ const SiderCommonComponent: React.FC = () => {
         items={[
           {
             key: "1",
-            icon: <UserOutlined />,
+            icon: <UserOutlined rev />,
             label: "nav 1",
           },
           {
             key: "2",
-            icon: <VideoCameraOutlined />,
+            icon: <VideoCameraOutlined rev />,
             label: "nav 2",
           },
           {
             key: "3",
-            icon: <UploadOutlined />,
+            icon: <UploadOutlined rev />,
             label: "nav 3",
           },
         ]}

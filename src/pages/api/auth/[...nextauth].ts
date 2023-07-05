@@ -2,14 +2,12 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
 const KeycloakConfig = {
-  clientId: "portal",
-  clientSecret: "OqCLEpNBdbBlbouNOxLlvHaD7RPc62Gl",
-  issuer: "https://sso.mly0110.org.cn:8443/auth/realms/GEN10/",
+  clientId: process.env.KEYCLOAK_ID,
+  clientSecret: process.env.KEYCLOAK_SECRET,
+  issuer: process.env.KEYCLOAK_ISSUER,
 };
 
-// KEYCLOAK_ID=portal
-// KEYCLOAK_SECRET=Ye5hCXHMxCRENTPVZ6Bs2Rt8GKAzre7F
-// KEYCLOAK_ISSUER=https://sso.mly0110.org.cn:8443/auth/realms/
+console.log(KeycloakConfig);
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options

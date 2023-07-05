@@ -27,7 +27,7 @@
     "release:alpha": "standard-version --prerelease alpha",
     "release:rc": "standard-version --prerelease rc",
     "sort": "npx sort-package-json",
-    "start": "next start"
+    "start": "NODE_ENV=production next start"
   },
   "husky": {
     "hooks": {
