@@ -8,6 +8,8 @@ COPY . /usr/src/app/
 
 # RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
+RUN npm install pnpm -g --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
+
 RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
 #  --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
@@ -17,7 +19,7 @@ RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repos
 
 # npm install dependency
 # RUN npm install --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
-RUN npm install
+RUN pnpm install
 
 RUN npm run build
 

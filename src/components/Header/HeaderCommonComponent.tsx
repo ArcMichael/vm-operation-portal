@@ -11,7 +11,7 @@ const HeaderCommonComponent: React.FC = () => {
     <Layout.Header style={{ padding: 0, background: colorBgContainer }}>
       <Button
         type="text"
-        icon={collapsed ? <MenuUnfoldOutlined rev /> : <MenuFoldOutlined rev />}
+        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         onClick={() => setCollapsed(!collapsed)}
         style={{
           fontSize: "16px",
