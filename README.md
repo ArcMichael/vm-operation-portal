@@ -36,3 +36,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Docker Compose Configuration
+
+SSO 需要使用 keyCloak, 目前指向的是 sso.mly0110.org.cn 需要使用到 公网DNS，所以 docker-compose 增加 dns 指向到路由器而非 BIND9 
+另外由于 pnpm install 需要使用到 nexus，需要在 docker-compose 增加 hosts 指向 registry 到 nexus 内网地址
