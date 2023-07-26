@@ -1,8 +1,8 @@
 import { PureComponent } from "react";
 import { Col, Row } from "antd";
 
-const LayoutJustifyComponent = (_Component: any) =>
-  class extends PureComponent {
+const LayoutJustifyComponent = (_Component: any) => {
+  return class extends PureComponent {
     public static displayName = `LayoutJustifyComponent(${
       _Component.displayName || _Component.name || "Component"
     })`;
@@ -19,5 +19,6 @@ const LayoutJustifyComponent = (_Component: any) =>
       );
     }
   };
+};
 
 export default LayoutJustifyComponent;

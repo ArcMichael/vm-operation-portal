@@ -5,8 +5,8 @@ import { ContentCommonComponent } from "../Content";
 import { HeaderCommonComponent } from "../Header";
 import { FooterCommonComponent } from "../Footer";
 
-const LayoutCommonComponent = (Component: any) =>
-  class extends PureComponent {
+const LayoutCommonComponent = (Component: any) => {
+  return class extends PureComponent {
     public static displayName = `LayoutCommonComponent(${
       Component.displayName || Component.name || "Component"
     })`;
@@ -26,5 +26,6 @@ const LayoutCommonComponent = (Component: any) =>
       );
     }
   };
+};
 
 export default LayoutCommonComponent;
