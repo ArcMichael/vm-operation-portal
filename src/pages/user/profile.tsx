@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  LayoutCommonComponent,
-  LayoutJustifyComponent,
-} from "@/components/Layout";
-import { Button, Result } from "antd";
+import { LayoutCommonComponent } from "@/components/Layout";
 
 const Component: React.FC = () => <>PROFILE</>;
 
