@@ -28,6 +28,14 @@ const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
     },
   ];
 
+  // const TitleCase = (string: String) => {
+  //   let newString = string.split(" ");
+  //   for(let i = 0; i < newString.length; i++){
+  //     newString[i] = newString[i].slice(0,1).toUpperCase + newString[i].slice(1).toLowerCase();
+  //   }
+  //   return newString.join(" ")
+  // }
+
   // https://ant.design/components/breadcrumb-cn
 
   const router = useRouter();
@@ -43,7 +51,17 @@ const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
 
   console.log(extraBreadcrumbItems);
 
-  // console.log(pathSnippets)
+  /**
+   * key: /gym/book/create
+   * value: create
+   */
+  // const BreadcrumbProps2 = extraBreadcrumbItems.map(({key}) => {
+  //   const _href = key
+  //   const _value = key.split("/").slice(-1);
+  //   return {
+  //     title: <a href={_href}>{ _value || router.pathname }</a>
+  //   }
+  // })
 
   return (
     <Layout.Content
