@@ -12,11 +12,11 @@ export default function App({
   pageProps,
 }: AppProps<{ session: Session }>) {
   return (
-    <SessionProvider session={pageProps.session}>
-      <ConfigProvider locale={zhCN}>
+    <ConfigProvider locale={zhCN}>
+      <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />
-      </ConfigProvider>
-    </SessionProvider>
+      </SessionProvider>
+    </ConfigProvider>
   );
 }
 
