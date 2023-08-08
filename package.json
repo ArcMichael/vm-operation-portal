@@ -27,7 +27,8 @@
     "release:alpha": "standard-version --prerelease alpha",
     "release:rc": "standard-version --prerelease rc",
     "sort": "npx sort-package-json",
-    "start": "NODE_ENV=production next start"
+    "start": "NODE_ENV=production next start",
+    "analyzer": "ANALYZE=true next build"
   },
   "husky": {
     "hooks": {
@@ -64,6 +65,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@next/bundle-analyzer": "^13.4.13",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
