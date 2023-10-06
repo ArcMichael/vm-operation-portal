@@ -1,10 +1,10 @@
 import { PureComponent } from "react";
 import { Col, Row } from "antd";
 
-const LayoutJustifyComponent = (_Component: any) => {
+const LayoutJustifyComponent = (Comps: any) => {
   return class extends PureComponent {
     public static displayName = `LayoutJustifyComponent(${
-      _Component.displayName || _Component.name || "Component"
+      Comps.displayName || Comps.name || "Component"
     })`;
 
     public render() {
@@ -12,7 +12,7 @@ const LayoutJustifyComponent = (_Component: any) => {
         <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
           <Col span={8}></Col>
           <Col span={8}>
-            <_Component />
+            <Comps />
           </Col>
           <Col span={8}></Col>
         </Row>

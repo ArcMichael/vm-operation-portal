@@ -20,11 +20,26 @@ export const authOptions: NextAuthOptions = {
     logo: "/logo_128x128.jpg", // Absolute URL to image
     buttonText: "", // Hex color code
   },
+  pages: {
+    signOut: "/auth/signout",
+  },
   callbacks: {
     async jwt({ token }) {
-      console.log(token);
-      token.userRole = "admin";
+      console.log("11", token);
+      // token.userRole = "admin";
       return token;
+    },
+    async signIn(sign) {
+      console.log("sign", sign);
+      return true;
+    },
+    async redirect(redirect) {
+      console.log("redirect", redirect);
+      return "/smc";
+    },
+    async session(session) {
+      console.log("session", session);
+      return session.session;
     },
   },
 };

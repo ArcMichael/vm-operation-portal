@@ -2,12 +2,16 @@ import React from "react";
 import { Layout, theme } from "antd";
 import * as Molecular from "../Molecular";
 
-interface ContentCommonComponentProps extends React.PropsWithChildren<{}> {
+interface ContentCommonComponentProps
+  extends React.PropsWithChildren<{
+    Brandcrumb?: Boolean;
+  }> {
   // add any other props here if needed
 }
 
 const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
   children,
+  Brandcrumb,
 }) => {
   const {
     token: { colorBgContainer },
@@ -22,7 +26,8 @@ const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
         background: colorBgContainer,
       }}
     >
-      <Molecular.Brandcrumb />
+      {Brandcrumb ? <Molecular.Brandcrumb /> : <></>}
+
       {/* {pathSnippets} */}
       {children || "Default Text"}
     </Layout.Content>
