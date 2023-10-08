@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
 import { UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import Link from "next/link";
+import { AppSessionContext } from "@/lib";
+
+// const items: MenuProps["items"] =
 
 const SiderCommonComponent_SMC: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  // const [collapsed, setCollapsed] = useState(true);
+
+  const { onCollapse, setOnCollapse } = useContext(AppSessionContext);
 
   return (
     <Layout.Sider
       collapsible
-      collapsed={collapsed}
-      onCollapse={(value) => setCollapsed(value)}
+      collapsed={onCollapse}
+      onCollapse={(value) => {
+        // console
+        // console.log(onCollapse)
+        // setCollapsed(value)
+        setOnCollapse(value);
+      }}
     >
       <div className="logo" />
       <Menu
