@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.6...v0.1.7) (2023-10-08)
+
+
+### Features
+
+* **add localstorage:** connext localstorage ([ff445b8](https://github.com/ArcMichael/vm-operation-portal/commit/ff445b84ad7b87c13d546f89ce85e4d6d987fa8d))
+
 ### [0.1.6](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.5...v0.1.6) (2023-10-06)
 
 
