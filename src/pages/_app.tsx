@@ -7,25 +7,33 @@ import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import type { Session } from "next-auth";
 import { AppSessionContext } from "@/lib";
-import { AppSessionContextType, useOnCollapse } from "@/lib/AppSessionContext";
+import {
+  AppSessionContextType,
+  useStateActionSmc,
+} from "@/lib/AppSessionContext";
+import { useMemo } from "react";
 
 export default function App({
   Component,
   pageProps,
 }: AppProps<{ session: Session }>) {
-  const [onCollapse, setOnCollapse] = useOnCollapse();
+  const [onActionSmc, setonActionSmc] = useStateActionSmc();
+
+  /**
+   * 避免多次渲染
+   */
+  const value = useMemo(
+    () => ({
+      onActionSmc,
+      setonActionSmc,
+    }),
+    [onActionSmc, setonActionSmc]
+  );
 
   return (
     <ConfigProvider locale={zhCN}>
       <SessionProvider session={pageProps.session}>
-        <AppSessionContext.Provider
-          value={
-            {
-              onCollapse,
-              setOnCollapse,
-            } as AppSessionContextType
-          }
-        >
+        <AppSessionContext.Provider value={value as AppSessionContextType}>
           <Component {...pageProps} />
         </AppSessionContext.Provider>
       </SessionProvider>

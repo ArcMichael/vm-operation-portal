@@ -7,34 +7,34 @@ import {
 } from "react";
 
 interface AppSessionContextType {
-  onCollapse: boolean;
-  setOnCollapse: Dispatch<SetStateAction<boolean>>;
+  onActionSmc: boolean;
+  setonActionSmc: Dispatch<SetStateAction<boolean>>;
 }
 
 const AppSessionContext = createContext<AppSessionContextType>(
   {} as AppSessionContextType
 );
 
-const useOnCollapse = () => {
-  const [onCollapse, setOnCollapse] = useState(true);
+const useStateActionSmc = () => {
+  const [onActionSmc, setonActionSmc] = useState(true);
 
   useEffect(() => {
-    const onCollapse = localStorage.getItem("onCollapse");
-    console.log(onCollapse);
-    if (onCollapse) {
-      setOnCollapse(JSON.parse(onCollapse));
+    const onActionSmc = localStorage.getItem("onActionSmc");
+    console.log(onActionSmc);
+    if (onActionSmc) {
+      setonActionSmc(JSON.parse(onActionSmc));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("onCollapse", JSON.stringify(onCollapse));
-  }, [onCollapse]);
+    localStorage.setItem("onActionSmc", JSON.stringify(onActionSmc));
+  }, [onActionSmc]);
 
-  return [onCollapse, setOnCollapse];
+  return [onActionSmc, setonActionSmc];
 };
 
 export default AppSessionContext;
 
 export type { AppSessionContextType };
 
-export { useOnCollapse };
+export { useStateActionSmc };

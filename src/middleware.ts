@@ -10,10 +10,8 @@ export async function middleware(req: NextRequest) {
       !!process.env.VERCEL_URL,
   });
 
-  console.log("=", session);
-
   if (!session) {
-    return NextResponse.redirect(new URL("/user/login", req.url));
+    return NextResponse.redirect(new URL("/auth/login", req.url));
   } else {
     return NextResponse.next();
   }

@@ -1,44 +1,23 @@
 import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
-import { UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
-import Link from "next/link";
 import { AppSessionContext } from "@/lib";
-
-// const items: MenuProps["items"] =
+import configMenu from "@/configs";
 
 const SiderCommonComponent_SMC: React.FC = () => {
-  // const [collapsed, setCollapsed] = useState(true);
-
-  const { onCollapse, setOnCollapse } = useContext(AppSessionContext);
+  const { onActionSmc, setonActionSmc } = useContext(AppSessionContext);
 
   return (
     <Layout.Sider
       collapsible
-      collapsed={onCollapse}
-      onCollapse={(value) => {
-        // console
-        // console.log(onCollapse)
-        // setCollapsed(value)
-        setOnCollapse(value);
-      }}
+      collapsed={onActionSmc}
+      onCollapse={(value) => setonActionSmc(value)}
     >
       <div className="logo" />
       <Menu
         theme="dark"
         mode="inline"
         defaultSelectedKeys={["1"]}
-        items={[
-          {
-            key: "1",
-            icon: <VideoCameraOutlined />,
-            label: <Link href="/smc">SMC</Link>,
-          },
-          {
-            key: "2",
-            icon: <UserOutlined />,
-            label: <Link href="/user/profile">USER</Link>,
-          },
-        ]}
+        items={configMenu}
       />
     </Layout.Sider>
   );
