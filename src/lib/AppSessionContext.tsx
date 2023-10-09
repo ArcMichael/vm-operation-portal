@@ -10,9 +10,9 @@ import {
 //         defaultOpenKeys={["1"]}
 
 interface OnActionSmcType<T> {
-  onCollapse?: boolean;
-  onDefaultSelectedKeys?: T;
-  onDefaultOpenKeys?: T;
+  onCollapse: boolean;
+  onDefaultSelectedKeys: T;
+  onDefaultOpenKeys: T;
 }
 
 interface AppSessionContextType<T> {
