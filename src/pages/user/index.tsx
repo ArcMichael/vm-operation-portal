@@ -1,6 +1,6 @@
 import React from "react";
-import { LayoutCommonComponent } from "@/components/Layout";
+import { LayoutSMCComponent } from "@/components/Layout";
 
 const Component: React.FC = () => <></>;
 
-export default LayoutCommonComponent(Component);
+export default LayoutSMCComponent(Component);

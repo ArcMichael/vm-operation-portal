@@ -6,11 +6,13 @@ import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import type { Session } from "next-auth";
-import { AppSessionContext } from "@/lib";
 import {
+  AppSessionContext,
   AppSessionContextType,
+  OnActionSmcType,
   useStateActionSmc,
-} from "@/lib/AppSessionContext";
+} from "@/lib";
+
 import { useMemo } from "react";
 
 export default function App({
@@ -33,7 +35,9 @@ export default function App({
   return (
     <ConfigProvider locale={zhCN}>
       <SessionProvider session={pageProps.session}>
-        <AppSessionContext.Provider value={value as AppSessionContextType}>
+        <AppSessionContext.Provider
+          value={value as AppSessionContextType<OnActionSmcType<string[]>>}
+        >
           <Component {...pageProps} />
         </AppSessionContext.Provider>
       </SessionProvider>

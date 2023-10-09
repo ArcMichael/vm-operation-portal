@@ -4,14 +4,14 @@ import Link from "next/link";
 import { LayoutSMCComponent } from "@/components/Layout";
 const { Meta } = Card;
 
-interface IREF {
+interface RefType {
   title: string;
   description: string;
   href: string;
-  page?: IREF_SLINK[];
+  page?: RefSubLinkType[];
 }
 
-interface IREF_SLINK {
+interface RefSubLinkType {
   title: string;
   description: string;
   href: string;
@@ -109,7 +109,7 @@ const Component: React.FC = () => {
     margin: 20,
   };
 
-  const CardList = (Ref: IREF[]) => {
+  const CardList = (Ref: RefType[]) => {
     return (
       <>
         {Ref.map((data, idx) => (
@@ -137,7 +137,7 @@ const Component: React.FC = () => {
     );
   };
 
-  const CardList_SLink = (Ref_Slink: IREF) => {
+  const CardList_SLink = (Ref_Slink: RefType) => {
     if (!Ref_Slink.page) return <div></div>;
     return (
       <>

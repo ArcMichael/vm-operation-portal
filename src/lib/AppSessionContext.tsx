@@ -6,17 +6,32 @@ import {
   useState,
 } from "react";
 
-interface AppSessionContextType {
-  onActionSmc: boolean;
-  setonActionSmc: Dispatch<SetStateAction<boolean>>;
+// defaultSelectedKeys={["1"]}
+//         defaultOpenKeys={["1"]}
+
+interface OnActionSmcType<T> {
+  onCollapse?: boolean;
+  onDefaultSelectedKeys?: T;
+  onDefaultOpenKeys?: T;
 }
 
-const AppSessionContext = createContext<AppSessionContextType>(
-  {} as AppSessionContextType
-);
+interface AppSessionContextType<T> {
+  onActionSmc: T;
+  setonActionSmc: Dispatch<SetStateAction<T>>;
+}
+
+const AppSessionContext = createContext<
+  AppSessionContextType<OnActionSmcType<string[]>>
+>({} as AppSessionContextType<OnActionSmcType<string[]>>);
+
+const initialOnActionSmc: OnActionSmcType<string[]> = {
+  onCollapse: false,
+  onDefaultSelectedKeys: ["1"],
+  onDefaultOpenKeys: ["1"],
+};
 
 const useStateActionSmc = () => {
-  const [onActionSmc, setonActionSmc] = useState(true);
+  const [onActionSmc, setonActionSmc] = useState(initialOnActionSmc);
 
   useEffect(() => {
     const onActionSmc = localStorage.getItem("onActionSmc");
@@ -27,6 +42,7 @@ const useStateActionSmc = () => {
   }, []);
 
   useEffect(() => {
+    console.log(onActionSmc);
     localStorage.setItem("onActionSmc", JSON.stringify(onActionSmc));
   }, [onActionSmc]);
 
@@ -35,6 +51,6 @@ const useStateActionSmc = () => {
 
 export default AppSessionContext;
 
-export type { AppSessionContextType };
+export type { AppSessionContextType, OnActionSmcType };
 
 export { useStateActionSmc };

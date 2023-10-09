@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
 import { AppSessionContext } from "@/lib";
-import configMenu from "@/configs";
+import { configMenu } from "@/configs";
 
 const SiderCommonComponent_SMC: React.FC = () => {
   const { onActionSmc, setonActionSmc } = useContext(AppSessionContext);
@@ -9,15 +9,24 @@ const SiderCommonComponent_SMC: React.FC = () => {
   return (
     <Layout.Sider
       collapsible
-      collapsed={onActionSmc}
-      onCollapse={(value) => setonActionSmc(value)}
+      collapsed={onActionSmc.onCollapse}
+      onCollapse={(value) =>
+        setonActionSmc({ ...onActionSmc, onCollapse: value })
+      }
     >
       <div className="logo" />
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={onActionSmc.onDefaultOpenKeys || ["1"]}
+        defaultOpenKeys={onActionSmc.onDefaultOpenKeys || ["1"]}
         items={configMenu}
+        onOpenChange={(openKeys) =>
+          setonActionSmc({ ...onActionSmc, onDefaultOpenKeys: openKeys })
+        }
+        onClick={(info) =>
+          setonActionSmc({ ...onActionSmc, onDefaultOpenKeys: info.keyPath })
+        }
       />
     </Layout.Sider>
   );

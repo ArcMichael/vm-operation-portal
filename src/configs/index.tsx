@@ -5,4 +5,4 @@ type ConfigMenuType = ItemType;
 
 export type { ConfigMenuType };
 
-export default configMenu;
+export { configMenu };
