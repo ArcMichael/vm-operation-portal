@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.7...v0.1.8) (2023-10-09)
+
+
+### Features
+
+* **change auth redirect, encapsulate menus, reset smcaction:** big update ([c480b14](https://github.com/ArcMichael/vm-operation-portal/commit/c480b1482230867f1baa801c4bae7a3bc7fc9f79))
+* **component interation with header and sider, update layout with smccomps for userlogin:** big up ([ca67aef](https://github.com/ArcMichael/vm-operation-portal/commit/ca67aefc1b92305df0407d52d831662b3a4c327b))
+* **reference search:** research ([7fc6d21](https://github.com/ArcMichael/vm-operation-portal/commit/7fc6d21b1bd36b782a5d9495b3da98d6bad8bcdc))
+
 ### [0.1.7](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.6...v0.1.7) (2023-10-08)
 
 
