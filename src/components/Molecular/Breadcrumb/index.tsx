@@ -34,7 +34,9 @@ const MolecularBreadcrumb: React.FC = () => {
   const BreadcrumbProps = breadcrumbs.map((props) => {
     return {
       title: (
-        <Link href={props.href.split("?")[0]}>{props.title.split("?")[0]}</Link>
+        <Link href={props.href.split("?")[0]}>
+          {props.title.split("?")[0].toUpperCase()}
+        </Link>
       ),
     };
   });

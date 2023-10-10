@@ -2,6 +2,7 @@ import React from "react";
 import { Layout, theme } from "antd";
 import HeaderCommonComponent_Button from "./HeaderCommonComponent_Button";
 import HeaderCommonComponent_SMC from "./HeaderCommonComponent_SMC";
+import HeaderCommonComponent_GYM from "./HeaderCommonComponent_GYM";
 
 const HeaderCommonComponent: React.FC = () => {
   const {
@@ -16,4 +17,8 @@ const HeaderCommonComponent: React.FC = () => {
 
 export default HeaderCommonComponent;
 
-export { HeaderCommonComponent_Button, HeaderCommonComponent_SMC };
+export {
+  HeaderCommonComponent_Button,
+  HeaderCommonComponent_SMC,
+  HeaderCommonComponent_GYM,
+};

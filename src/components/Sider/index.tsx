@@ -2,6 +2,7 @@ import React from "react";
 import { Layout, Menu } from "antd";
 import { UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import SiderCommonComponent_SMC from "./LayoutSiderComponent_SMC";
+import SiderCommonComponent_GYM from "./LayoutSiderComponent_GYM";
 
 const SiderCommonComponent: React.FC = () => {
   return (
@@ -30,4 +31,4 @@ const SiderCommonComponent: React.FC = () => {
 
 export default SiderCommonComponent;
 
-export { SiderCommonComponent_SMC };
+export { SiderCommonComponent_SMC, SiderCommonComponent_GYM };

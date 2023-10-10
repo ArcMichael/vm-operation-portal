@@ -1,9 +1,9 @@
 import { PureComponent } from "react";
 import { Layout } from "antd";
 import { ContentCommonComponent_Brandcrumb } from "@/components/Content";
-import { HeaderCommonComponent_Button } from "@/components/Header";
+import { HeaderCommonComponent_GYM } from "@/components/Header";
 import { FooterCommonComponent } from "@/components/Footer";
-import SiderCommonComponent from "@/components/Sider";
+import { SiderCommonComponent_GYM } from "@/components/Sider";
 
 const LayoutCommonComponent = (Comps: any) => {
   return class extends PureComponent {
@@ -14,9 +14,9 @@ const LayoutCommonComponent = (Comps: any) => {
     public render() {
       return (
         <Layout style={{ height: "100vh" }}>
-          <SiderCommonComponent />
+          <SiderCommonComponent_GYM />
           <Layout>
-            <HeaderCommonComponent_Button />
+            <HeaderCommonComponent_GYM />
             <ContentCommonComponent_Brandcrumb Brandcrumb>
               <Comps />
             </ContentCommonComponent_Brandcrumb>

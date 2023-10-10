@@ -6,40 +6,69 @@ import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import type { Session } from "next-auth";
-import {
-  AppSessionContext,
-  AppSessionContextType,
-  OnActionSmcType,
-  useStateActionSmc,
-} from "@/lib";
 
 import { useMemo } from "react";
+
+import {
+  SessionContextPortal,
+  useStateActionPortal,
+  SessionContextService,
+  useStateActionService,
+} from "@/store/SessionContext";
+
+import type {
+  OnActionServiceType,
+  SessionContextServiceType,
+  OnActionPortalType,
+  SessionContextPortalType,
+} from "@/store/SessionContext";
 
 export default function App({
   Component,
   pageProps,
 }: AppProps<{ session: Session }>) {
-  const [onActionSmc, setonActionSmc] = useStateActionSmc();
+  const [onActionPortal, setonActionPortal] = useStateActionPortal();
+  const [onActionService, setonActionService] = useStateActionService();
 
   /**
    * 避免多次渲染
    */
-  const value = useMemo(
+  const SessionContextPortalValue = useMemo(
     () => ({
-      onActionSmc,
-      setonActionSmc,
+      onActionPortal,
+      setonActionPortal,
     }),
-    [onActionSmc, setonActionSmc]
+    [onActionPortal, setonActionPortal]
+  );
+
+  const SessionContextServiceValue = useMemo(
+    () => ({
+      onActionService,
+      setonActionService,
+    }),
+    [onActionService, setonActionService]
   );
 
   return (
     <ConfigProvider locale={zhCN}>
       <SessionProvider session={pageProps.session}>
-        <AppSessionContext.Provider
-          value={value as AppSessionContextType<OnActionSmcType<string[]>>}
+        <SessionContextPortal.Provider
+          value={
+            SessionContextPortalValue as SessionContextPortalType<
+              OnActionPortalType<string[]>
+            >
+          }
         >
-          <Component {...pageProps} />
-        </AppSessionContext.Provider>
+          <SessionContextService.Provider
+            value={
+              SessionContextServiceValue as SessionContextServiceType<
+                OnActionServiceType<string[]>
+              >
+            }
+          >
+            <Component {...pageProps} />
+          </SessionContextService.Provider>
+        </SessionContextPortal.Provider>
       </SessionProvider>
     </ConfigProvider>
   );

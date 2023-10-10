@@ -1,4 +1,4 @@
-import { AppSessionContext } from "@/lib";
+import { SessionContextPortal } from "@/store/SessionContext";
 import { DownOutlined } from "@ant-design/icons";
 import { Button, Dropdown, MenuProps, Space } from "antd";
 import { signOut, useSession } from "next-auth/react";
@@ -8,15 +8,16 @@ import React, { useContext } from "react";
 const DropdownCommonComponent_Header: React.FC = () => {
   const { data: session, status } = useSession();
 
-  const { onActionSmc, setonActionSmc } = useContext(AppSessionContext);
+  const { onActionPortal, setonActionPortal } =
+    useContext(SessionContextPortal);
 
   const configHeader: MenuProps["items"] = [
     {
       label: (
         <Link
           onClick={() =>
-            setonActionSmc({
-              ...onActionSmc,
+            setonActionPortal({
+              ...onActionPortal,
               onDefaultOpenKeys: ["1"],
               onDefaultSelectedKeys: [],
             })
@@ -32,15 +33,16 @@ const DropdownCommonComponent_Header: React.FC = () => {
       label: (
         <Link
           onClick={() =>
-            setonActionSmc({
-              ...onActionSmc,
+            setonActionPortal({
+              ...onActionPortal,
               onDefaultOpenKeys: ["2.1", "2"],
               onDefaultSelectedKeys: ["2.1", "2"],
             })
           }
           href="/user/profile"
         >
-          User Profile
+          {" "}
+          User Profile{" "}
         </Link>
       ),
       key: "1",

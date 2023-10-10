@@ -5,6 +5,7 @@ import {
   UserSwitchOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
+import configGymMenu from "./gym";
 
 const configMenu: ConfigMenuType[] = [
   {
@@ -26,4 +27,6 @@ const configMenu: ConfigMenuType[] = [
   },
 ];
 
-export { configMenu };
+export default configMenu;
+
+export { configGymMenu };

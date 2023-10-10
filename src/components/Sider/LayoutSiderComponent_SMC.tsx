@@ -1,31 +1,35 @@
 import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
-import { AppSessionContext } from "@/lib";
 import { configMenu } from "@/configs";
+import { SessionContextPortal } from "@/store/SessionContext";
 
 const SiderCommonComponent_SMC: React.FC = () => {
-  const { onActionSmc, setonActionSmc } = useContext(AppSessionContext);
+  const { onActionPortal, setonActionPortal } =
+    useContext(SessionContextPortal);
 
   return (
     <Layout.Sider
       collapsible
-      collapsed={onActionSmc?.onCollapse || false}
+      collapsed={onActionPortal?.onCollapse || false}
       onCollapse={(value) =>
-        setonActionSmc({ ...onActionSmc, onCollapse: value })
+        setonActionPortal({ ...onActionPortal, onCollapse: value })
       }
     >
       <div className="logo" />
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={onActionSmc?.onDefaultOpenKeys || ["1"]}
-        defaultOpenKeys={onActionSmc?.onDefaultOpenKeys || ["1"]}
+        defaultSelectedKeys={onActionPortal?.onDefaultOpenKeys || ["1"]}
+        defaultOpenKeys={onActionPortal?.onDefaultOpenKeys || ["1"]}
         items={configMenu}
         onOpenChange={(openKeys) =>
-          setonActionSmc({ ...onActionSmc, onDefaultOpenKeys: openKeys })
+          setonActionPortal({ ...onActionPortal, onDefaultOpenKeys: openKeys })
         }
         onClick={(info) =>
-          setonActionSmc({ ...onActionSmc, onDefaultOpenKeys: info.keyPath })
+          setonActionPortal({
+            ...onActionPortal,
+            onDefaultOpenKeys: info.keyPath,
+          })
         }
       />
     </Layout.Sider>
