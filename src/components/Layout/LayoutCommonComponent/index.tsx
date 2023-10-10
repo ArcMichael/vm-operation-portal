@@ -1,9 +1,9 @@
 import { PureComponent } from "react";
 import { Layout } from "antd";
-import SiderCommonComponent from "@/components/Sider";
 import { ContentCommonComponent_Brandcrumb } from "@/components/Content";
 import { HeaderCommonComponent_Button } from "@/components/Header";
 import { FooterCommonComponent } from "@/components/Footer";
+import SiderCommonComponent from "@/components/Sider";
 
 const LayoutCommonComponent = (Comps: any) => {
   return class extends PureComponent {
