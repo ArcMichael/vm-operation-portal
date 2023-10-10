@@ -9,7 +9,7 @@ const SiderCommonComponent_SMC: React.FC = () => {
   return (
     <Layout.Sider
       collapsible
-      collapsed={onActionSmc.onCollapse}
+      collapsed={onActionSmc?.onCollapse || false}
       onCollapse={(value) =>
         setonActionSmc({ ...onActionSmc, onCollapse: value })
       }
@@ -18,8 +18,8 @@ const SiderCommonComponent_SMC: React.FC = () => {
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={onActionSmc.onDefaultOpenKeys || ["1"]}
-        defaultOpenKeys={onActionSmc.onDefaultOpenKeys || ["1"]}
+        defaultSelectedKeys={onActionSmc?.onDefaultOpenKeys || ["1"]}
+        defaultOpenKeys={onActionSmc?.onDefaultOpenKeys || ["1"]}
         items={configMenu}
         onOpenChange={(openKeys) =>
           setonActionSmc({ ...onActionSmc, onDefaultOpenKeys: openKeys })

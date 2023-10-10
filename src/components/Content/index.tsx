@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "antd";
+import { Layout, theme } from "antd";
 import ContentCommonComponent_Brandcrumb from "./ContentCommonComponent_Brandcrumb";
 
 interface ContentCommonComponentProps extends React.PropsWithChildren<{}> {
@@ -9,8 +9,19 @@ interface ContentCommonComponentProps extends React.PropsWithChildren<{}> {
 const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
   children,
 }) => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+
   return (
-    <Layout.Content>
+    <Layout.Content
+      style={{
+        margin: "24px 16px",
+        padding: 24,
+        minHeight: 280,
+        background: colorBgContainer,
+      }}
+    >
       {/* {pathSnippets} */}
       {children || "Default Text"}
     </Layout.Content>

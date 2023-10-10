@@ -112,7 +112,7 @@ const Component: React.FC = () => {
   const CardList = (Ref: RefType[]) => {
     return (
       <>
-        {Ref.map((data, idx) => (
+        {Ref.map((item, idx) => (
           <Card
             key={idx}
             // extra={<div></div>}
@@ -122,28 +122,28 @@ const Component: React.FC = () => {
             style={cardStyle}
             // cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
           >
-            <Link href={data.href} key={idx}>
+            <Link href={item.href} key={idx}>
               <Meta
-                title={data.title}
-                description={data.description}
+                title={item.title}
+                description={item.description}
                 style={{ marginBottom: 20 }}
               />
             </Link>
 
-            {CardList_SLink(data)}
+            {CardList_SLink(item)}
           </Card>
         ))}
       </>
     );
   };
 
-  const CardList_SLink = (Ref_Slink: RefType) => {
-    if (!Ref_Slink.page) return <div></div>;
+  const CardList_SLink = (RefSubItems: RefType) => {
+    if (!RefSubItems.page) return <div></div>;
     return (
       <>
-        {Ref_Slink?.page.map((data, idx) => (
-          <Link href={data.href} key={idx}>
-            <p>{data.description}</p>
+        {RefSubItems?.page.map((item, idx) => (
+          <Link href={item.href} key={idx}>
+            <p>{item.description}</p>
           </Link>
         ))}
       </>

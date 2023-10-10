@@ -1,21 +1,21 @@
 import { ConfigMenuType } from "@/configs/";
 import {
+  AppstoreOutlined,
   UserOutlined,
   UserSwitchOutlined,
-  VideoCameraOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 
 const configMenu: ConfigMenuType[] = [
   {
     key: "1",
-    icon: <VideoCameraOutlined />,
+    icon: <AppstoreOutlined />,
     label: <Link href="/smc">SMC</Link>,
   },
   {
     key: "2",
     icon: <UserOutlined />,
-    label: <Link href="/user">USER</Link>,
+    label: "USER",
     children: [
       {
         key: "2.1",
