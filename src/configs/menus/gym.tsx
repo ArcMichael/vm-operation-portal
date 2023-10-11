@@ -10,6 +10,8 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 
+// const menuGymPages:
+
 const configGymMenu: ConfigMenuType[] = [
   {
     key: "1",
