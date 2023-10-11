@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.10...v0.1.11) (2023-10-11)
+
+
+### Features
+
+* **align:** align ([71084f9](https://github.com/ArcMichael/vm-operation-portal/commit/71084f92fb494698acfe2aba66eefc38044df9e8))
+* **card components,new type:** s update ([3cc0fde](https://github.com/ArcMichael/vm-operation-portal/commit/3cc0fde634007334c0fd6e1f83abbdb720f56313))
+* **merge:** merge ([cfa2233](https://github.com/ArcMichael/vm-operation-portal/commit/cfa223308d373c117e6501cc9a50c8d8b2d33d24))
+
+
+### Others
+
+* **release:** 0.1.10 ([6775974](https://github.com/ArcMichael/vm-operation-portal/commit/67759741bc8818ebf9f2ea83fb4922561919f121))
+
 ### [0.1.10](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.9...v0.1.10) (2023-10-11)
 
 ### [0.1.9](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.8...v0.1.9) (2023-10-10)
