@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.8...v0.1.9) (2023-10-10)
+
+
+### Features
+
+* **add smc style, encapusulation dropdown for header, add user profile detail:** big update ([dec0d70](https://github.com/ArcMichael/vm-operation-portal/commit/dec0d703569fd97ea8398cb3d29c76df55490aa2))
+* **bugfix:** bugfix ([44d0d1d](https://github.com/ArcMichael/vm-operation-portal/commit/44d0d1d62a64a4e3644448e5aa1ef1fdf68b798a))
+* **rewrite gym(comps), up breadcrumb, encap gym rou, rewrite sessionctx:** big update ([aa6a1d4](https://github.com/ArcMichael/vm-operation-portal/commit/aa6a1d434a8e1f0d3ce0285ba08d0befc3e98ab1))
+
 ### [0.1.8](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.7...v0.1.8) (2023-10-09)
 
 
