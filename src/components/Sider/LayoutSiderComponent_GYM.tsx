@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
-import { configGymMenu } from "@/configs";
 import { SessionContextService } from "@/store/SessionContext";
+import { menuGymPages } from "@/configs";
 
 const SiderCommonComponent_GYM: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
@@ -21,7 +21,7 @@ const SiderCommonComponent_GYM: React.FC = () => {
         mode="inline"
         defaultSelectedKeys={onActionService?.onDefaultOpenKeys || ["1"]}
         defaultOpenKeys={onActionService?.onDefaultOpenKeys || ["1"]}
-        items={configGymMenu}
+        items={menuGymPages || []}
         onOpenChange={(openKeys) =>
           setonActionService({
             ...onActionService,
