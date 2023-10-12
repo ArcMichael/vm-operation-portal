@@ -31,7 +31,7 @@ const useStateActionPortal = () => {
   const [onActionPortal, setonActionPortal] = useState(initialOnActionPortal);
 
   useEffect(() => {
-    const onActionPortal = localStorage.getItem("onActionPortal");
+    const onActionPortal = sessionStorage.getItem("onActionPortal");
     console.log(onActionPortal);
     if (onActionPortal) {
       setonActionPortal(JSON.parse(onActionPortal));
@@ -40,7 +40,7 @@ const useStateActionPortal = () => {
 
   useEffect(() => {
     console.log(onActionPortal);
-    localStorage.setItem("onActionPortal", JSON.stringify(onActionPortal));
+    sessionStorage.setItem("onActionPortal", JSON.stringify(onActionPortal));
   }, [onActionPortal]);
 
   return [onActionPortal, setonActionPortal];

@@ -16,38 +16,38 @@ const gymRouteConfigs: RouteConfig[] = [
   {
     context: "BOOK",
     path: "/gym/book",
-    defaultOpenKeys: ["1"], // No need for open keys for top-level menu items
-    defaultSelectedKeys: ["1"],
+    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
   },
   {
     context: "MEMBER",
     path: "/gym/member",
-    defaultOpenKeys: ["2"], // No need for open keys for top-level menu items
-    defaultSelectedKeys: ["2"],
+    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
   },
   {
     context: "RESOURCE",
     path: "/gym/resource",
-    defaultOpenKeys: ["3"], // No need for open keys for top-level menu items
-    defaultSelectedKeys: ["3"],
+    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
   },
   {
     context: "ROOM",
     path: "/gym/room",
-    defaultOpenKeys: ["4"], // No need for open keys for top-level menu items
-    defaultSelectedKeys: ["4"],
+    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
   },
   {
     context: "TAGS",
     path: "/gym/tags",
-    defaultOpenKeys: ["5"], // No need for open keys for top-level menu items
-    defaultSelectedKeys: ["5"],
+    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
   },
   {
     context: "TEACHER",
     path: "/gym/teacher",
-    defaultOpenKeys: ["6"], // No need for open keys for top-level menu items
-    defaultSelectedKeys: ["6"],
+    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
   },
 ];
 

@@ -33,8 +33,8 @@ const useStateActionService = () => {
   );
 
   useEffect(() => {
-    const onActionService = localStorage.getItem("onActionService");
-    console.log(onActionService);
+    const onActionService = sessionStorage.getItem("onActionService");
+    // console.log(onActionService);
     if (onActionService) {
       setonActionService(JSON.parse(onActionService));
     }
@@ -42,7 +42,7 @@ const useStateActionService = () => {
 
   useEffect(() => {
     console.log(onActionService);
-    localStorage.setItem("onActionService", JSON.stringify(onActionService));
+    sessionStorage.setItem("onActionService", JSON.stringify(onActionService));
   }, [onActionService]);
 
   return [onActionService, setonActionService];

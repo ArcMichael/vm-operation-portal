@@ -29,8 +29,8 @@ const SiderCommonComponent_GYM: React.FC = () => {
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={onActionService?.onDefaultOpenKeys || ["1"]}
-        defaultOpenKeys={onActionService?.onDefaultOpenKeys || ["1"]}
+        selectedKeys={onActionService?.onDefaultOpenKeys || ["1"]}
+        openKeys={onActionService?.onDefaultOpenKeys || ["1"]}
         onOpenChange={(openKeys: React.Key[]) =>
           setonActionService({
             ...onActionService,
