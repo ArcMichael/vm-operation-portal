@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { Breadcrumb } from "antd";
 
 type BreadcrumbProps = {
@@ -20,28 +19,27 @@ const MolecularBreadcrumb: React.FC = () => {
       const linkPath = router.asPath.split("/");
       linkPath.shift();
 
-      const pathArray: BreadcrumbProps[] = linkPath.map((path, i) => {
-        return { title: path, href: "/" + linkPath.slice(0, i + 1).join("/") };
-      });
+      const pathArray = linkPath.map((path, i) => ({
+        title: path,
+        href: "/" + linkPath.slice(0, i + 1).join("/"),
+      }));
       setBreadcrumbs(pathArray);
     }
   }, [router]);
 
-  if (!breadcrumbs) {
-    return null;
-  }
+  if (!breadcrumbs) return null;
 
-  const BreadcrumbProps = breadcrumbs.map((props) => {
-    return {
-      title: (
-        <Link href={props.href.split("?")[0]}>
-          {props.title.split("?")[0].toUpperCase()}
-        </Link>
-      ),
-    };
-  });
-
-  return <Breadcrumb items={BreadcrumbProps} />;
+  return (
+    <Breadcrumb
+      items={breadcrumbs.map((breadcrumb) => ({
+        title: (
+          <Link href={breadcrumb.href.split("?")[0]}>
+            {breadcrumb.title.split("?")[0].toUpperCase()}
+          </Link>
+        ),
+      }))}
+    />
+  );
 };
 
 export default MolecularBreadcrumb;

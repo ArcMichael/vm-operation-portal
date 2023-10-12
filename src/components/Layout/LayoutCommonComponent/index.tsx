@@ -4,6 +4,7 @@ import { ContentCommonComponent_Brandcrumb } from "@/components/Content";
 import { HeaderCommonComponent_GYM } from "@/components/Header";
 import { FooterCommonComponent } from "@/components/Footer";
 import { SiderCommonComponent_GYM } from "@/components/Sider";
+import React from "react";
 
 const LayoutCommonComponent = (Comps: any) => {
   return class extends PureComponent {

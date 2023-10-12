@@ -1,11 +1,21 @@
 import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
 import { SessionContextService } from "@/store/SessionContext";
-import { menuGymPages } from "@/configs";
+import { gymConvertRouteToMenu } from "@/configs/menus/gym";
+import { gymRouteConfigs } from "@/configs/menus/gym";
 
 const SiderCommonComponent_GYM: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
     SessionContextService
+  );
+
+  const menuItems = gymRouteConfigs.map((route, index) =>
+    gymConvertRouteToMenu(
+      route,
+      `${index + 1}`,
+      onActionService,
+      setonActionService
+    )
   );
 
   return (
@@ -21,20 +31,20 @@ const SiderCommonComponent_GYM: React.FC = () => {
         mode="inline"
         defaultSelectedKeys={onActionService?.onDefaultOpenKeys || ["1"]}
         defaultOpenKeys={onActionService?.onDefaultOpenKeys || ["1"]}
-        items={menuGymPages || []}
-        onOpenChange={(openKeys) =>
+        onOpenChange={(openKeys: React.Key[]) =>
           setonActionService({
             ...onActionService,
-            onDefaultOpenKeys: openKeys,
+            onDefaultOpenKeys: openKeys as string[],
           })
         }
         onClick={(info) =>
           setonActionService({
             ...onActionService,
-            onDefaultOpenKeys: info.keyPath,
+            onDefaultOpenKeys: info.keyPath as string[],
           })
         }
-      />
+        items={menuItems}
+      ></Menu>
     </Layout.Sider>
   );
 };

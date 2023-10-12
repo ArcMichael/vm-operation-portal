@@ -1,5 +1,6 @@
 import { PureComponent } from "react";
 import { Col, Row } from "antd";
+import React from "react";
 
 const LayoutJustifyComponent = (Comps: any) => {
   return class extends PureComponent {

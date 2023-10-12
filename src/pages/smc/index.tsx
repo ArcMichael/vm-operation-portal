@@ -18,7 +18,7 @@ interface RefSubLinkType {
 }
 
 const Component: React.FC = () => {
-  let Ref = [
+  const Ref = [
     {
       title: "GYM",
       description: "GYM",

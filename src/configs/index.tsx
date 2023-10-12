@@ -1,11 +1,9 @@
 import { ItemType } from "antd/es/menu/hooks/useItems";
-import configMenu, { configGymMenu } from "./menus";
+import type { RouteConfig, MenuConfig } from "./menus/smc";
 
 type ConfigMenuType = ItemType & {
   title?: string;
   href?: string;
 };
 
-export type { ConfigMenuType };
-
-export { configMenu, configGymMenu };
+export type { ConfigMenuType, RouteConfig, MenuConfig };

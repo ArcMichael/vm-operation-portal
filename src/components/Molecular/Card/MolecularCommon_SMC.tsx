@@ -1,4 +1,4 @@
-import { ConfigMenuType } from "@/configs";
+import { RouteConfig } from "@/configs";
 import { Card } from "antd";
 import Link from "next/link";
 import React from "react";
@@ -15,7 +15,7 @@ interface MolecularCardProps_SMC
     title: string;
     href: string;
     description: string;
-    pages: ConfigMenuType[];
+    pages: RouteConfig[];
   }> {
   // ...
 }
@@ -49,7 +49,7 @@ const MolecularCard_SMC: React.FC<MolecularCardProps_SMC> = ({
 };
 interface MolecularCardListProps_SMC
   extends React.PropsWithChildren<{
-    pages: ConfigMenuType[];
+    pages: RouteConfig[];
   }> {
   // ...
 }
@@ -60,8 +60,8 @@ const MolecularCardList_SMC: React.FC<MolecularCardListProps_SMC> = ({
   return (
     <>
       {pages.map((item, index) => (
-        <Link href={item.href || ""} key={index}>
-          <p>{item.title}</p>
+        <Link href={item.path || ""} key={index}>
+          <p>{item.context}</p>
         </Link>
       ))}
     </>

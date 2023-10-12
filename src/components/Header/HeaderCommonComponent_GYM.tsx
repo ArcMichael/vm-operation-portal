@@ -19,7 +19,7 @@ const HeaderCommonComponent_GYM: React.FC = () => {
       <Button
         type="text"
         icon={
-          onActionService.onCollapse ? (
+          onActionService?.onCollapse ? (
             <MenuUnfoldOutlined />
           ) : (
             <MenuFoldOutlined />

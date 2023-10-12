@@ -4,7 +4,7 @@ import * as Molecular from "../Molecular";
 
 interface ContentCommonComponentProps
   extends React.PropsWithChildren<{
-    Brandcrumb?: Boolean;
+    Brandcrumb?: boolean;
   }> {
   // add any other props here if needed
 }

@@ -2,6 +2,7 @@ import { ConfigProvider } from "antd";
 import zhCN from "antd/locale/zh_CN";
 import "antd/dist/antd";
 import "@/styles/globals.css";
+import React from "react";
 
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";

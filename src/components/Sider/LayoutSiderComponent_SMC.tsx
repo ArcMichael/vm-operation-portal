@@ -1,11 +1,20 @@
 import React, { useContext } from "react";
 import { Layout, Menu } from "antd";
-import { configMenu } from "@/configs";
 import { SessionContextPortal } from "@/store/SessionContext";
+import { routeConfigs, smcConvertRouteToMenu } from "@/configs/menus/smc";
 
 const SiderCommonComponent_SMC: React.FC = () => {
   const { onActionPortal, setonActionPortal } =
     useContext(SessionContextPortal);
+
+  const menuItems = routeConfigs.map((route, index) =>
+    smcConvertRouteToMenu(
+      route,
+      `${index + 1}`,
+      onActionPortal,
+      setonActionPortal
+    )
+  );
 
   return (
     <Layout.Sider
@@ -19,19 +28,22 @@ const SiderCommonComponent_SMC: React.FC = () => {
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={onActionPortal?.onDefaultOpenKeys || ["1"]}
-        defaultOpenKeys={onActionPortal?.onDefaultOpenKeys || ["1"]}
-        items={configMenu}
-        onOpenChange={(openKeys) =>
-          setonActionPortal({ ...onActionPortal, onDefaultOpenKeys: openKeys })
+        selectedKeys={onActionPortal?.onDefaultOpenKeys || ["1"]}
+        openKeys={onActionPortal?.onDefaultOpenKeys || ["1"]}
+        onOpenChange={(openKeys: React.Key[]) =>
+          setonActionPortal({
+            ...onActionPortal,
+            onDefaultOpenKeys: openKeys as string[],
+          })
         }
         onClick={(info) =>
           setonActionPortal({
             ...onActionPortal,
-            onDefaultOpenKeys: info.keyPath,
+            onDefaultOpenKeys: info.keyPath as string[],
           })
         }
-      />
+        items={menuItems}
+      ></Menu>
     </Layout.Sider>
   );
 };
