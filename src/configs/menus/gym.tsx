@@ -7,9 +7,9 @@ import {
   HomeOutlined,
   AppstoreOutlined,
 } from "@ant-design/icons";
-import { MenuConfig, RouteConfig } from "@/configs/menus/smc";
 import Link from "next/link";
 import React from "react";
+import { MenuConfig, RouteConfig } from "./types";
 
 // Define route configurations for gym
 const gymRouteConfigs: RouteConfig[] = [

@@ -1,12 +1,10 @@
 import React from "react";
-import MolecularCommon_SMC, {
-  MolecularCardList_SMC,
-} from "./MolecularCommon_SMC";
+import MolecularCard, { MolecularCardList } from "./MolecularCard";
 
-const MolecularCard: React.FC = () => {
+const Components: React.FC = () => {
   return <></>;
 };
 
-export default MolecularCard;
+export default Components;
 
-export { MolecularCommon_SMC, MolecularCardList_SMC };
+export { MolecularCard, MolecularCardList };

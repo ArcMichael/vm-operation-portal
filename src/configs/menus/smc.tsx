@@ -7,22 +7,7 @@ import {
 import { MenuProps } from "antd";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
-
-interface RouteConfig {
-  context: string;
-  path: string;
-  action?: () => void; // Updated types
-  defaultOpenKeys?: string[];
-  defaultSelectedKeys?: string[];
-  children?: RouteConfig[];
-}
-
-interface MenuConfig {
-  key: string;
-  icon: React.ReactNode;
-  label: React.ReactNode;
-  children?: MenuConfig[];
-}
+import { MenuConfig, RouteConfig } from "./types";
 
 const routeConfigs: RouteConfig[] = [
   {
