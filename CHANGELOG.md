@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.11...v0.1.12) (2023-10-12)
+
+
+### Features
+
+* **component card:** new components ([62d5af2](https://github.com/ArcMichael/vm-operation-portal/commit/62d5af2779c02dbb1bca9f01a93566b6f0831ee9))
+* **eslint:** big update ([fb28e96](https://github.com/ArcMichael/vm-operation-portal/commit/fb28e96ece829aa8af1898c5baf058f428e0f523))
+* **vscode - auto format, inte gym sider, change storage to session:** big update ([45afcb2](https://github.com/ArcMichael/vm-operation-portal/commit/45afcb2f9e67b9f3eea479a595582dd0d0752352))
+
 ### [0.1.11](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.10...v0.1.11) (2023-10-11)
 
 
