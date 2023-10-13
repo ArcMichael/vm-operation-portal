@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, theme } from "antd";
-import MolecularDropdownHeader from "../Molecular/Dropdown/molecular-dropdown-header";
+import MolecularDropdownHeader from "@/components/Molecular/Dropdown/molecular-dropdown-header";
 
 const HeaderSmc: React.FC = () => {
   const {

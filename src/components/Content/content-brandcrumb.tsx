@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, theme } from "antd";
-import MolecularBreadcrumb from "../Molecular/Breadcrumb/molecular-breadcrumb";
+import MolecularBreadcrumb from "@/components/Molecular/Breadcrumb/molecular-breadcrumb";
 
 interface ContentBrandcrumbProps
   extends React.PropsWithChildren<{

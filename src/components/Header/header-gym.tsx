@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button, Layout, theme } from "antd";
 import { SessionContextService } from "@/store/SessionContext";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import MolecularDropdownHeader from "../Molecular/Dropdown/molecular-dropdown-header";
+import MolecularDropdownHeader from "@/components/Molecular/Dropdown/molecular-dropdown-header";
 
 const HeaderGym: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
