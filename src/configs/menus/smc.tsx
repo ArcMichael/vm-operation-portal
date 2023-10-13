@@ -19,7 +19,7 @@ const routeConfigs: RouteConfig[] = [
   {
     context: "user",
     path: "/user",
-    defaultOpenKeys: ["1", "2"],
+    defaultOpenKeys: ["2"],
     defaultSelectedKeys: [], // This top-level menu item is not selected by default
     children: [
       {

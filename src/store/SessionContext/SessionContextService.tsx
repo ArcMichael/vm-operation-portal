@@ -34,14 +34,13 @@ const useStateActionService = () => {
 
   useEffect(() => {
     const onActionService = sessionStorage.getItem("onActionService");
-    // console.log(onActionService);
     if (onActionService) {
       setonActionService(JSON.parse(onActionService));
     }
   }, []);
 
   useEffect(() => {
-    console.log(onActionService);
+    console.log("onActionService", onActionService);
     sessionStorage.setItem("onActionService", JSON.stringify(onActionService));
   }, [onActionService]);
 

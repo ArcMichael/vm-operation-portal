@@ -1,5 +1,5 @@
 import React from "react";
-import MolecularCard, { MolecularCardList } from "./MolecularCard";
+import MolecularCard from "./MolecularCard";
 
 const Components: React.FC = () => {
   return <></>;
@@ -7,4 +7,4 @@ const Components: React.FC = () => {
 
 export default Components;
 
-export { MolecularCard, MolecularCardList };
+export { MolecularCard };

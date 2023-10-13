@@ -16,38 +16,63 @@ const gymRouteConfigs: RouteConfig[] = [
   {
     context: "BOOK",
     path: "/gym/book",
-    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["1"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
   },
   {
     context: "MEMBER",
     path: "/gym/member",
-    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["2"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
   },
   {
     context: "RESOURCE",
     path: "/gym/resource",
-    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["3"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
   },
   {
     context: "ROOM",
     path: "/gym/room",
-    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["4"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
   },
   {
     context: "TAGS",
     path: "/gym/tags",
-    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["5"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
   },
   {
     context: "TEACHER",
     path: "/gym/teacher",
-    defaultOpenKeys: [], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["6"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
+  },
+];
+
+interface RefSubLinkType {
+  title: string;
+  description: string;
+  href: string;
+}
+
+// Gym References structure
+const GymReferences: {
+  title: string;
+  description: string;
+  href: string;
+  page: RefSubLinkType[];
+}[] = [
+  {
+    title: "GYM",
+    description: "GYM",
+    href: "/gym",
+    page: gymRouteConfigs.map((routeConfig) => ({
+      title: routeConfig.context,
+      description: routeConfig.context,
+      href: routeConfig.path,
+    })),
   },
 ];
 
@@ -93,7 +118,7 @@ const gymConvertRouteToMenu = (
 };
 
 // Mapping of gym contexts to their corresponding icons
-const gymContextIconMap: { [context: string]: React.ReactNode } = {
+const gymContextIconMap: Record<string, React.ReactNode> = {
   BOOK: <BookOutlined />,
   MEMBER: <UserOutlined />,
   RESOURCE: <FileOutlined />,
@@ -112,4 +137,5 @@ export {
   gymMenuConfigs,
   gymContextIconMap,
   gymConvertRouteToMenu,
+  GymReferences,
 };

@@ -32,14 +32,13 @@ const useStateActionPortal = () => {
 
   useEffect(() => {
     const onActionPortal = sessionStorage.getItem("onActionPortal");
-    console.log(onActionPortal);
     if (onActionPortal) {
       setonActionPortal(JSON.parse(onActionPortal));
     }
   }, []);
 
   useEffect(() => {
-    console.log(onActionPortal);
+    console.log("onActionPortal", onActionPortal);
     sessionStorage.setItem("onActionPortal", JSON.stringify(onActionPortal));
   }, [onActionPortal]);
 
