@@ -1,7 +1,7 @@
 import React from "react";
-import { LayoutSMCComponent } from "@/components/Layout";
 import { Descriptions } from "antd";
 import { useSession } from "next-auth/react";
+import LayoutSmc from "@/components/Layout/layout-smc";
 
 const Component: React.FC = () => {
   const { data: session, status } = useSession();
@@ -22,4 +22,4 @@ const Component: React.FC = () => {
   );
 };
 
-export default LayoutSMCComponent(Component);
+export default LayoutSmc(Component);

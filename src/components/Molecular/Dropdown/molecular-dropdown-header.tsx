@@ -5,7 +5,7 @@ import { Button, Dropdown, Space } from "antd";
 import { useSession } from "next-auth/react";
 import React, { useContext } from "react";
 
-const DropdownCommonComponent_Header: React.FC = () => {
+const MolecularDropdownHeader: React.FC = () => {
   const { data: session, status } = useSession();
   const { onActionPortal, setonActionPortal } =
     useContext(SessionContextPortal);
@@ -24,4 +24,4 @@ const DropdownCommonComponent_Header: React.FC = () => {
   );
 };
 
-export default DropdownCommonComponent_Header;
+export default MolecularDropdownHeader;

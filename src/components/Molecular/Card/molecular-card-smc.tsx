@@ -16,7 +16,7 @@ interface CardProps {
   pages: RouteConfig[];
 }
 
-const MolecularCard: React.FC<CardProps> = ({
+const MolecularCardSmc: React.FC<CardProps> = ({
   title,
   href,
   description,
@@ -68,4 +68,4 @@ const CardLinkList: React.FC<CardLinkListProps> = ({ pages }) => {
   );
 };
 
-export default MolecularCard;
+export default MolecularCardSmc;

@@ -1,15 +1,15 @@
 import React from "react";
 import { Layout, theme } from "antd";
-import * as Molecular from "../Molecular";
+import MolecularBreadcrumb from "../Molecular/Breadcrumb/molecular-breadcrumb";
 
-interface ContentCommonComponentProps
+interface ContentBrandcrumbProps
   extends React.PropsWithChildren<{
     Brandcrumb?: boolean;
   }> {
   // add any other props here if needed
 }
 
-const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
+const ContentBrandcrumb: React.FC<ContentBrandcrumbProps> = ({
   children,
   Brandcrumb,
 }) => {
@@ -26,7 +26,7 @@ const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
         background: colorBgContainer,
       }}
     >
-      {Brandcrumb ? <Molecular.Brandcrumb /> : <></>}
+      {Brandcrumb ? <MolecularBreadcrumb /> : <></>}
 
       {/* {pathSnippets} */}
       {children || "Default Text"}
@@ -34,4 +34,4 @@ const ContentCommonComponent: React.FC<ContentCommonComponentProps> = ({
   );
 };
 
-export default ContentCommonComponent;
+export default ContentBrandcrumb;

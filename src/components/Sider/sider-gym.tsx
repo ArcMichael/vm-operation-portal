@@ -4,7 +4,7 @@ import { SessionContextService } from "@/store/SessionContext";
 import { gymConvertRouteToMenu } from "@/configs/menus/gym";
 import { gymRouteConfigs } from "@/configs/menus/gym";
 
-const SiderCommonComponent_GYM: React.FC = () => {
+const SiderGym: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
     SessionContextService
   );
@@ -49,4 +49,4 @@ const SiderCommonComponent_GYM: React.FC = () => {
   );
 };
 
-export default SiderCommonComponent_GYM;
+export default SiderGym;

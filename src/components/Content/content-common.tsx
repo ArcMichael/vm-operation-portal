@@ -1,12 +1,7 @@
 import React from "react";
 import { Layout, theme } from "antd";
-import ContentCommonComponent_Brandcrumb from "./ContentCommonComponent_Brandcrumb";
 
-// interface ContentCommonComponentProps extends React.PropsWithChildren<{}> {
-//   // add any other props here if needed
-// }
-
-const ContentCommonComponent: React.FC<
+const ContentCommon: React.FC<
   React.PropsWithChildren<{ children?: React.ReactNode }>
 > = ({ children }) => {
   const {
@@ -28,6 +23,4 @@ const ContentCommonComponent: React.FC<
   );
 };
 
-export default ContentCommonComponent;
-
-export { ContentCommonComponent_Brandcrumb };
+export default ContentCommon;

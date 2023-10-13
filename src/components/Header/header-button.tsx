@@ -3,7 +3,7 @@ import { Button, Layout, theme } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { SessionContextService } from "@/store/SessionContext";
 
-const HeaderCommonComponent: React.FC = () => {
+const HeaderButton: React.FC = () => {
   // const [collapsed, setCollapsed] = useState(false);
   const { onActionService, setonActionService } = useContext(
     SessionContextService
@@ -38,4 +38,4 @@ const HeaderCommonComponent: React.FC = () => {
   );
 };
 
-export default HeaderCommonComponent;
+export default HeaderButton;

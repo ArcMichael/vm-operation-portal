@@ -1,8 +1,8 @@
 import React from "react";
-import { LayoutSMCComponent } from "@/components/Layout";
 import { GymReferences } from "@/configs/menus/gym";
-import { MolecularCard } from "@/components/Molecular/Card";
 import { RouteConfig } from "@/configs/menus/types";
+import LayoutSmc from "@/components/Layout/layout-smc";
+import MolecularCardSmc from "@/components/Molecular/Card/molecular-card-smc";
 
 interface RefSubLinkType {
   title: string;
@@ -36,7 +36,7 @@ const GymReferencePage: React.FC = () => {
       {GymReferences.map((refItem, idx) => {
         const { title, href, description, page } = refItem;
         return (
-          <MolecularCard
+          <MolecularCardSmc
             key={idx}
             title={title}
             href={href}
@@ -49,4 +49,4 @@ const GymReferencePage: React.FC = () => {
   );
 };
 
-export default LayoutSMCComponent(GymReferencePage);
+export default LayoutSmc(GymReferencePage);

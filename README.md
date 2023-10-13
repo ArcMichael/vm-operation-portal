@@ -37,7 +37,24 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Docker Compose Configuration
+## Adjustments to Docker Compose Configuration
 
-SSO 需要使用 keyCloak, 目前指向的是 sso.mly0110.org.cn 需要使用到 公网DNS，所以 docker-compose 增加 dns 指向到路由器而非 BIND9 
-另外由于 pnpm install 需要使用到 nexus，需要在 docker-compose 增加 hosts 指向 registry 到 nexus 内网地址
+For Single Sign-On (SSO), we need to utilize **Keycloak**. Currently, it points to `sso.mly0110.org.cn`. Given the requirement for public DNS, the Docker Compose configuration should:
+
+- Modify the DNS to point towards the router, rather than **BIND9**.
+
+Additionally, since `pnpm install` requires access to **Nexus**:
+
+- The Docker Compose configuration should update the hosts to direct `registry` to the internal Nexus address.
+
+## Code Conventions: Naming Rules
+
+To ensure clarity and consistency across the codebase, it's essential to follow strict naming conventions. Here are some basic guidelines:
+
+- **Files**: Use kebab-case (e.g., `header-smc-collapsible.tsx`, `content-brandcrumb.tsx`).
+- **Variables**: Use camelCase (e.g., `userName`, `userProfile`).
+- **Constants**: Use UPPER_SNAKE_CASE (e.g., `MAX_LIMIT`, `API_ENDPOINT`).
+- **Functions/Methods**: Use camelCase, starting with a verb (e.g., `getUserData()`, `setUserProfile()`).
+- **Classes/Interfaces**: Use PascalCase (e.g., `UserProfile`, `UserSettingsInterface`).
+
+By adhering to these naming conventions, the code remains readable and easier for team collaboration.

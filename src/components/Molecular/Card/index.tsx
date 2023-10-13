@@ -1,10 +1,7 @@
 import React from "react";
-import MolecularCard from "./MolecularCard";
 
-const Components: React.FC = () => {
+const MolecularCard: React.FC = () => {
   return <></>;
 };
 
-export default Components;
-
-export { MolecularCard };
+export default MolecularCard;

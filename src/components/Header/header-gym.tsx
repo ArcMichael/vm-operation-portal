@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Button, Layout, theme } from "antd";
-import { DropdownCommonComponent_Header } from "../Molecular";
 import { SessionContextService } from "@/store/SessionContext";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import MolecularDropdownHeader from "../Molecular/Dropdown/molecular-dropdown-header";
 
-const HeaderCommonComponent_GYM: React.FC = () => {
+const HeaderGym: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
     SessionContextService
   );
@@ -38,9 +38,9 @@ const HeaderCommonComponent_GYM: React.FC = () => {
           float: "left",
         }}
       />
-      <DropdownCommonComponent_Header />
+      <MolecularDropdownHeader />
     </Layout.Header>
   );
 };
 
-export default HeaderCommonComponent_GYM;
+export default HeaderGym;

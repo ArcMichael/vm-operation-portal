@@ -3,7 +3,7 @@ import { Layout, Menu } from "antd";
 import { SessionContextPortal } from "@/store/SessionContext";
 import { routeConfigs, smcConvertRouteToMenu } from "@/configs/menus/smc";
 
-const SiderCommonComponent_SMC: React.FC = () => {
+const SiderSmc: React.FC = () => {
   const { onActionPortal, setonActionPortal } =
     useContext(SessionContextPortal);
 
@@ -48,4 +48,4 @@ const SiderCommonComponent_SMC: React.FC = () => {
   );
 };
 
-export default SiderCommonComponent_SMC;
+export default SiderSmc;

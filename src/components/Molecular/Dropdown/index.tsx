@@ -1,7 +1,6 @@
 import { DownOutlined } from "@ant-design/icons";
 import { Button, Dropdown, MenuProps, Space } from "antd";
 import React from "react";
-import DropdownCommonComponent_Header from "./MolecularCommon_Header";
 
 const MolecularDropdown: React.FC = () => {
   const items: MenuProps["items"] = [
@@ -35,5 +34,3 @@ const MolecularDropdown: React.FC = () => {
 };
 
 export default MolecularDropdown;
-
-export { DropdownCommonComponent_Header };

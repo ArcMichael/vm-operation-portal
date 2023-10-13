@@ -1,7 +1,7 @@
 import React from "react";
-import { LayoutCommonComponent } from "@/components/Layout";
 import { Tag, Space, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
+import LayoutCommon from "@/components/Layout/layout-common";
 
 interface DataType {
   key: string;
@@ -86,4 +86,4 @@ const data: DataType[] = [
 
 const Component: React.FC = () => <Table columns={columns} dataSource={data} />;
 
-export default LayoutCommonComponent(Component);
+export default LayoutCommon(Component);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Result } from "antd";
-import { LayoutJustifyComponent } from "@/components/Layout";
+import LayoutJustify from "@/components/Layout/layout-justify";
 
 const Component: React.FC = () => (
   <Result
@@ -11,4 +11,4 @@ const Component: React.FC = () => (
   />
 );
 
-export default LayoutJustifyComponent(Component);
+export default LayoutJustify(Component);

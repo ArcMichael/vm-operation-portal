@@ -1,3 +1,1 @@
-import FooterCommonComponent from "./FooterCommonComponent";
-
-export { FooterCommonComponent };
+export default {};

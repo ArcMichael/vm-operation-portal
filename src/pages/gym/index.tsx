@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { LayoutCommonComponent } from "@/components/Layout";
 import { useRouter } from "next/router";
 import { SessionContextService } from "@/store/SessionContext";
+import LayoutCommon from "@/components/Layout/layout-common";
 
 const Component: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
@@ -22,4 +22,4 @@ const Component: React.FC = () => {
   return <></>;
 };
 
-export default LayoutCommonComponent(Component);
+export default LayoutCommon(Component);

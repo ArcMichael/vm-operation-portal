@@ -1,8 +1,7 @@
 import React from "react";
-import { LayoutJustifyComponent } from "@/components/Layout";
-
 import { signIn, signOut, useSession } from "next-auth/react";
 import styles from "./header.module.css";
+import LayoutJustify from "@/components/Layout/layout-justify";
 
 const Component: React.FC = () => {
   const { data: session, status } = useSession();
@@ -68,4 +67,4 @@ const Component: React.FC = () => {
   );
 };
 
-export default LayoutJustifyComponent(Component);
+export default LayoutJustify(Component);
