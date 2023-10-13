@@ -30,15 +30,17 @@ const MolecularBreadcrumb: React.FC = () => {
   if (!breadcrumbs) return null;
 
   return (
-    <Breadcrumb
-      items={breadcrumbs.map((breadcrumb) => ({
-        title: (
-          <Link href={breadcrumb.href.split("?")[0]}>
-            {breadcrumb.title.split("?")[0].toUpperCase()}
-          </Link>
-        ),
-      }))}
-    />
+    <div style={{ marginBottom: "24px" }}>
+      <Breadcrumb
+        items={breadcrumbs.map((breadcrumb) => ({
+          title: (
+            <Link href={breadcrumb.href.split("?")[0]}>
+              {breadcrumb.title.split("?")[0].toUpperCase()}
+            </Link>
+          ),
+        }))}
+      />
+    </div>
   );
 };
 
