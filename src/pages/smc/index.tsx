@@ -8,6 +8,8 @@ interface RefSubLinkType {
   title: string;
   description: string;
   href: string;
+  defaultOpenKeys?: string[];
+  defaultSelectedKeys?: string[];
 }
 
 const GymReferencePage: React.FC = () => {
@@ -18,6 +20,8 @@ const GymReferencePage: React.FC = () => {
     return pages.map((page) => ({
       context: page.title,
       path: page.href,
+      defaultOpenKeys: page.defaultOpenKeys || [],
+      defaultSelectedKeys: page.defaultSelectedKeys || [],
     }));
   };
 

@@ -72,6 +72,8 @@ const GymReferences: {
       title: routeConfig.context,
       description: routeConfig.context,
       href: routeConfig.path,
+      defaultOpenKeys: routeConfig.defaultOpenKeys,
+      defaultSelectedKeys: routeConfig.defaultSelectedKeys,
     })),
   },
 ];

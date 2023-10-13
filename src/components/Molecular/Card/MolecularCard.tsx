@@ -1,7 +1,8 @@
-import { RouteConfig } from "@/configs";
+import { RouteConfig } from "@/configs/menus/types";
+import { SessionContextService } from "@/store/SessionContext";
 import { Card } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 
 const cardStyle: React.CSSProperties = {
   width: 240,
@@ -40,10 +41,26 @@ interface CardLinkListProps {
 }
 
 const CardLinkList: React.FC<CardLinkListProps> = ({ pages }) => {
+  const { onActionService, setonActionService } = useContext(
+    SessionContextService
+  );
+
   return (
     <>
       {pages.map((item, index) => (
-        <Link href={item.path || ""} key={index}>
+        <Link
+          onClick={() => {
+            item.defaultOpenKeys || item.defaultSelectedKeys
+              ? setonActionService({
+                  ...onActionService,
+                  onDefaultOpenKeys: item.defaultOpenKeys || [],
+                  onDefaultSelectedKeys: item.defaultSelectedKeys || [],
+                })
+              : null;
+          }}
+          href={item.path || ""}
+          key={index}
+        >
           <p>{item.context}</p>
         </Link>
       ))}
