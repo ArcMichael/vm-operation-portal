@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.13...v0.1.14) (2023-10-15)
+
+
+### Features
+
+* **/gym/book reference with table:** update ([25528cd](https://github.com/ArcMichael/vm-operation-portal/commit/25528cd6a933ce02267a0c019fc6a963743a010a))
+* **change redirect, rewrite molecularcard, page/smc:** big update ([ad06c4a](https://github.com/ArcMichael/vm-operation-portal/commit/ad06c4a5814414f1d99e1e1e7a12c9a76927c9e3))
+* **component for card , card options params:** update ([84e6489](https://github.com/ArcMichael/vm-operation-portal/commit/84e648913d67ed58ebd47eb8a0fffc68c71b0cb5))
+* **install echarts and implements a demo with /user:** testing and done ([8b93616](https://github.com/ArcMichael/vm-operation-portal/commit/8b93616378792f8dcea786b67c500347676e98e5))
+* **use new naming rules to change:** big update ([f6834c4](https://github.com/ArcMichael/vm-operation-portal/commit/f6834c4bb99938b4fbf692ae98c15449d620bc14))
+* **use tsconfig.json paths:** update ([db8e669](https://github.com/ArcMichael/vm-operation-portal/commit/db8e6694bee1a4d6183f3b29c1e348da1a136338))
+
 ### [0.1.13](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.12...v0.1.13) (2023-10-12)
 
 ### [0.1.12](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.11...v0.1.12) (2023-10-12)
