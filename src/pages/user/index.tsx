@@ -1,6 +1,9 @@
 import React from "react";
 import LayoutSmc from "@/components/Layout/layout-smc";
+import StatterBasic from "@/chats/statter-basic";
 
-const Component: React.FC = () => <>USER</>;
+const UserChart: React.FC = () => {
+  return <StatterBasic />;
+};
 
-export default LayoutSmc(Component);
+export default LayoutSmc(UserChart);
