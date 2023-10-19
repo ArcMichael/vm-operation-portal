@@ -9,7 +9,7 @@ const EchartsBasicFormattime = (time: string) => {
   }
 };
 
-console.log();
+const KPI_VALUE = 100;
 
 const columnData: EChartsOption = {
   tooltip: {
@@ -73,6 +73,25 @@ const columnData: EChartsOption = {
         data: [
           [{ type: "average" }, { type: "max" }],
           { type: "average", name: "Average" },
+        ],
+      },
+    },
+    {
+      name: "KPI",
+      type: "line", // 使用线系列，不会显示任何数据点
+      data: [], // 不需要实际数据
+      markLine: {
+        symbol: "none", // 移除标记点，只显示线
+        lineStyle: {
+          color: "red", // 可以选择任何颜色
+          width: 2, // 线宽
+        },
+        label: {
+          position: "start", // 选择标签位置
+          formatter: "KPI: {c}", // 标签内容
+        },
+        data: [
+          { yAxis: KPI_VALUE }, // 使用 yAxis 属性来指定 y 值
         ],
       },
     },
