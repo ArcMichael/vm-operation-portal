@@ -9,7 +9,7 @@ const EchartsBasicFormattime = (time: string) => {
   }
 };
 
-const KPI_VALUE = 100;
+const KPI_IELTS = 100;
 
 const columnData: EChartsOption = {
   tooltip: {
@@ -91,7 +91,7 @@ const columnData: EChartsOption = {
           formatter: "KPI: {c}", // 标签内容
         },
         data: [
-          { yAxis: KPI_VALUE }, // 使用 yAxis 属性来指定 y 值
+          { yAxis: KPI_IELTS }, // 使用 yAxis 属性来指定 y 值
         ],
       },
     },
