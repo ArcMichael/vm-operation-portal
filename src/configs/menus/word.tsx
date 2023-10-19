@@ -1,11 +1,7 @@
 import {
-  BookOutlined,
-  FileOutlined,
-  LikeOutlined,
-  TeamOutlined,
-  UserOutlined,
-  HomeOutlined,
   AppstoreOutlined,
+  UploadOutlined,
+  LineChartOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import React from "react";
@@ -20,7 +16,7 @@ const wordRouteConfigs: RouteConfig[] = [
     defaultSelectedKeys: [],
   },
   {
-    context: "MEMBER",
+    context: "SUBMIT",
     path: "/word/submit",
     defaultOpenKeys: ["2"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
@@ -97,12 +93,8 @@ const wordConvertRouteToMenu = (
 
 // Mapping of gym contexts to their corresponding icons
 const wordContextIconMap: Record<string, React.ReactNode> = {
-  BOOK: <BookOutlined />,
-  MEMBER: <UserOutlined />,
-  RESOURCE: <FileOutlined />,
-  ROOM: <HomeOutlined />,
-  TAGS: <LikeOutlined />,
-  TEACHER: <TeamOutlined />,
+  REPORT: <LineChartOutlined />,
+  SUBMIT: <UploadOutlined />,
 };
 
 // Convert route configs to menu configs
