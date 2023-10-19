@@ -4,11 +4,11 @@ import React from "react";
 import SiderGym from "@/components/Sider/sider-gym";
 import ContentBrandcrumb from "@/components/Content/content-brandcrumb";
 import Footer from "@/components/Footer/footer";
-import HeaderGym from "@/components/Header/header-gym";
+import HeaderGym from "@/components/Header/header-common";
 
-const LayoutCommon = (Comps: any) => {
+const LayoutGym = (Comps: any) => {
   return class extends PureComponent {
-    public static displayName = `LayoutCommon(${
+    public static displayName = `LayoutGym(${
       Comps.displayName || Comps.name || "Component"
     })`;
 
@@ -29,4 +29,4 @@ const LayoutCommon = (Comps: any) => {
   };
 };
 
-export default LayoutCommon;
+export default LayoutGym;

@@ -3,6 +3,7 @@ import { GymReferences } from "@/configs/menus/gym";
 import { RouteConfig } from "@/configs/menus/types";
 import LayoutSmc from "@/components/Layout/layout-smc";
 import MolecularCardSmc from "@/components/Molecular/Card/molecular-card-smc";
+import { WordReferences } from "@/configs/menus/word";
 
 interface RefSubLinkType {
   title: string;
@@ -34,6 +35,18 @@ const GymReferencePage: React.FC = () => {
   return (
     <div style={cardContainerStyle}>
       {GymReferences.map((refItem, idx) => {
+        const { title, href, description, page } = refItem;
+        return (
+          <MolecularCardSmc
+            key={idx}
+            title={title}
+            href={href}
+            description={description}
+            pages={refSubLinksToRouteConfig(page)}
+          />
+        );
+      })}
+      {WordReferences.map((refItem, idx) => {
         const { title, href, description, page } = refItem;
         return (
           <MolecularCardSmc

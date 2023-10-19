@@ -1,7 +1,7 @@
 import React from "react";
 import { Tag, Space, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
-import LayoutCommon from "@/components/Layout/layout-common";
+import LayoutCommon from "@/components/Layout/layout-gym";
 
 interface DataType {
   key: string;

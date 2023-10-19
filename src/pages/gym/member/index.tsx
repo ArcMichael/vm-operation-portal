@@ -1,4 +1,4 @@
-import LayoutCommon from "@/components/Layout/layout-common";
+import LayoutCommon from "@/components/Layout/layout-gym";
 import React from "react";
 
 const Component: React.FC = () => <></>;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { SessionContextService } from "@/store/SessionContext";
-import LayoutCommon from "@/components/Layout/layout-gym";
+import LayoutWord from "@/components/Layout/layout-word";
 
 const Component: React.FC = () => {
   const { onActionService, setonActionService } = useContext(
@@ -16,10 +16,10 @@ const Component: React.FC = () => {
       onDefaultOpenKeys: ["1"],
       onDefaultSelectedKeys: ["1"],
     });
-    router.replace("/gym/book");
+    router.replace("/word/report");
   }, []);
 
   return <></>;
 };
 
-export default LayoutCommon(Component);
+export default LayoutWord(Component);
