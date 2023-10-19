@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.14...v0.1.15) (2023-10-19)
+
+
+### Features
+
+* **add kpi in word report:** any update ([55139e7](https://github.com/ArcMichael/vm-operation-portal/commit/55139e73fc76d8d25938fe8dbf74a8faa38327f5))
+* **change auth route:** any ([a1d5fe7](https://github.com/ArcMichael/vm-operation-portal/commit/a1d5fe7c49b8c69843eb996b3e0778a2f7a48e01))
+* **change icon with word sider:** any update ([e3a789a](https://github.com/ArcMichael/vm-operation-portal/commit/e3a789afc81bf535a6ead11f89351a260c6dd24b))
+* **change kpi:** any change ([fa0b26f](https://github.com/ArcMichael/vm-operation-portal/commit/fa0b26fecf1853099ffc4521a1cb0a3d406445e7))
+* **del empty file:** any updae ([bd768a2](https://github.com/ArcMichael/vm-operation-portal/commit/bd768a26f7487b4e94c0aae547ec92bea0ffbe8e))
+* **set word app, add charts with word status every days:** any update ([6c93096](https://github.com/ArcMichael/vm-operation-portal/commit/6c93096406106e911187f4cc7c0d735f1a908d23))
+
 ### [0.1.14](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.13...v0.1.14) (2023-10-15)
 
 
