@@ -33,6 +33,7 @@ const columnData: EChartsOption = {
         EchartsBasicFormattime("2023-10-16"),
         EchartsBasicFormattime("2023-10-17"),
         EchartsBasicFormattime("2023-10-18"),
+        EchartsBasicFormattime("2023-10-19"),
       ],
     },
   ],
@@ -48,7 +49,7 @@ const columnData: EChartsOption = {
       emphasis: {
         focus: "series",
       },
-      data: [0, 24, 85, 87],
+      data: [0, 24, 85, 87, 116],
       markLine: {
         lineStyle: {
           type: "dashed",
@@ -65,7 +66,7 @@ const columnData: EChartsOption = {
       emphasis: {
         focus: "series",
       },
-      data: [124, 45, 48, 98],
+      data: [124, 45, 48, 98, 32],
       markLine: {
         lineStyle: {
           type: "dashed",
