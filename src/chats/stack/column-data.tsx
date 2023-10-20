@@ -34,6 +34,7 @@ const columnData: EChartsOption = {
         EchartsBasicFormattime("2023-10-17"),
         EchartsBasicFormattime("2023-10-18"),
         EchartsBasicFormattime("2023-10-19"),
+        EchartsBasicFormattime("2023-10-20"),
       ],
     },
   ],
@@ -49,7 +50,7 @@ const columnData: EChartsOption = {
       emphasis: {
         focus: "series",
       },
-      data: [0, 24, 85, 87, 116],
+      data: [0, 24, 85, 87, 116, 90],
       markLine: {
         lineStyle: {
           type: "dashed",
@@ -66,7 +67,7 @@ const columnData: EChartsOption = {
       emphasis: {
         focus: "series",
       },
-      data: [124, 45, 48, 98, 32],
+      data: [124, 45, 48, 98, 32, 59],
       markLine: {
         lineStyle: {
           type: "dashed",
@@ -88,8 +89,8 @@ const columnData: EChartsOption = {
           width: 2, // 线宽
         },
         label: {
-          position: "start", // 选择标签位置
-          formatter: "KPI: {c}", // 标签内容
+          position: "insideEndTop", // 选择标签位置
+          formatter: "New: {c}", // 标签内容
         },
         data: [
           { yAxis: KPI_IELTS }, // 使用 yAxis 属性来指定 y 值
