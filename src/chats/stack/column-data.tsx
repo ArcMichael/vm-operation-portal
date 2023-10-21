@@ -9,7 +9,7 @@ const EchartsBasicFormattime = (time: string) => {
   }
 };
 
-const KPI_IELTS = 100;
+const KPI_IELTS = 150;
 
 const columnData: EChartsOption = {
   tooltip: {
@@ -35,6 +35,7 @@ const columnData: EChartsOption = {
         EchartsBasicFormattime("2023-10-18"),
         EchartsBasicFormattime("2023-10-19"),
         EchartsBasicFormattime("2023-10-20"),
+        EchartsBasicFormattime("2023-10-20"),
       ],
     },
   ],
@@ -47,34 +48,50 @@ const columnData: EChartsOption = {
     {
       name: "Yesterday Leftover",
       type: "bar",
+      stack: "YT",
       emphasis: {
         focus: "series",
       },
-      data: [0, 24, 85, 87, 116, 90],
+      data: [0, 24, 85, 87, 116, 90, 128],
       markLine: {
         lineStyle: {
           type: "dashed",
         },
         data: [
           [{ type: "average" }, { type: "max" }],
-          { type: "average", name: "Average" },
+          {
+            type: "average",
+            name: "Average",
+            label: {
+              formatter: "Avg.: {c}",
+              position: "middle",
+            },
+          },
         ],
       },
     },
     {
       name: "Today New",
       type: "bar",
+      stack: "YT",
       emphasis: {
         focus: "series",
       },
-      data: [124, 45, 48, 98, 32, 59],
+      data: [124, 45, 48, 98, 32, 59, 41],
       markLine: {
         lineStyle: {
           type: "dashed",
         },
         data: [
           [{ type: "average" }, { type: "max" }],
-          { type: "average", name: "Average" },
+          {
+            type: "average",
+            name: "Average",
+            label: {
+              formatter: "Avg.: {c}",
+              position: "middle",
+            },
+          },
         ],
       },
     },
