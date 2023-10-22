@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
 
-# RUN npm config set loglevel http
+RUN npm config set loglevel verbose
 
 # RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
