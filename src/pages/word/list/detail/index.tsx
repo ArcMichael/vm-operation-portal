@@ -1,7 +1,6 @@
 import LayoutWord from "@/components/Layout/layout-word";
-import { Space, Table } from "antd";
+import { Tag, Space, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
-import Link from "next/link";
 // import Table, { ColumnsType } from "antd/es/table";
 import React from "react";
 
@@ -21,29 +20,19 @@ const columns: ColumnsType<DataType> = [
     render: (text) => <a>{text}</a>,
   },
   {
-    title: "日期",
+    title: "单词",
     dataIndex: "age",
     key: "age",
   },
   {
-    title: "New",
+    title: "音标",
     dataIndex: "address",
     key: "address",
   },
   {
-    title: "Leftover",
+    title: "解释",
     dataIndex: "address",
     key: "address",
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Details {record.name}</a>
-        <Link href={`/word/list/detail?2023-10-15`}>2023-10-15</Link>
-      </Space>
-    ),
   },
 ];
 
