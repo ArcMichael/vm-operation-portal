@@ -1,8 +1,15 @@
 import { EChartsType, init } from "echarts";
-import { useEffect, useRef } from "react";
-import columnData from "./column-data";
+import React, { useEffect, useRef } from "react";
+// import columnData from "./column-data";
 
-const StackedColumn = () => {
+interface StackedColumnProps
+  extends React.PropsWithChildren<{
+    stackedColumnData: any;
+  }> {
+  // add any other props here if needed
+}
+
+const StackedColumn: React.FC<StackedColumnProps> = ({ stackedColumnData }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -10,7 +17,7 @@ const StackedColumn = () => {
 
     const chart: EChartsType = init(containerRef.current);
 
-    chart.setOption(columnData);
+    chart.setOption(stackedColumnData);
 
     return () => {
       chart.dispose(); // 清理图表实例

@@ -2,6 +2,7 @@ import {
   AppstoreOutlined,
   UploadOutlined,
   LineChartOutlined,
+  OrderedListOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import React from "react";
@@ -16,9 +17,15 @@ const wordRouteConfigs: RouteConfig[] = [
     defaultSelectedKeys: [],
   },
   {
+    context: "LIST",
+    path: "/word/list",
+    defaultOpenKeys: ["2"], // No need for open keys for top-level menu items
+    defaultSelectedKeys: [],
+  },
+  {
     context: "SUBMIT",
     path: "/word/submit",
-    defaultOpenKeys: ["2"], // No need for open keys for top-level menu items
+    defaultOpenKeys: ["3"], // No need for open keys for top-level menu items
     defaultSelectedKeys: [],
   },
 ];
@@ -94,6 +101,7 @@ const wordConvertRouteToMenu = (
 // Mapping of gym contexts to their corresponding icons
 const wordContextIconMap: Record<string, React.ReactNode> = {
   REPORT: <LineChartOutlined />,
+  LIST: <OrderedListOutlined />,
   SUBMIT: <UploadOutlined />,
 };
 
