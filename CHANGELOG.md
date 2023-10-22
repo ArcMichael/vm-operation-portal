@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.15...v0.1.16) (2023-10-22)
+
+
+### Features
+
+* **add 1019 data:** up ([b6cffe8](https://github.com/ArcMichael/vm-operation-portal/commit/b6cffe8e9cceadf54c873f098995f58f27ce5612))
+* **add new data:** any ([e3e8a50](https://github.com/ArcMichael/vm-operation-portal/commit/e3e8a509cf6a14d2d3d6e028c6356998db44c569))
+* **format:** format ([68743c8](https://github.com/ArcMichael/vm-operation-portal/commit/68743c80a00394359dfeddbc81483a424c29ebd0))
+* **list and detail demo:** demo ([5109d75](https://github.com/ArcMichael/vm-operation-portal/commit/5109d755e40987afe1a40e92afd2c43ec1d6a78c))
+* **new data:** any ([3cbc4bd](https://github.com/ArcMichael/vm-operation-portal/commit/3cbc4bde05cc73a446248155540f0a59a438fbeb))
+* **split stack-column with module and move to page path with data, add new list path:** mid up ([6112208](https://github.com/ArcMichael/vm-operation-portal/commit/6112208e206812a2e6c8bb07e1d8af64b17a9907))
+
 ### [0.1.15](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.14...v0.1.15) (2023-10-19)
 
 
