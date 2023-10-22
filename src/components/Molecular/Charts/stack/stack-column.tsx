@@ -1,10 +1,9 @@
-import { EChartsType, init } from "echarts";
+import { EChartsOption, EChartsType, init } from "echarts";
 import React, { useEffect, useRef } from "react";
-// import columnData from "./column-data";
 
 interface StackedColumnProps
   extends React.PropsWithChildren<{
-    stackedColumnData: any;
+    stackedColumnData: EChartsOption;
   }> {
   // add any other props here if needed
 }
@@ -22,7 +21,7 @@ const StackedColumn: React.FC<StackedColumnProps> = ({ stackedColumnData }) => {
     return () => {
       chart.dispose(); // 清理图表实例
     };
-  }, []);
+  }, [stackedColumnData]);
 
   return <div ref={containerRef} style={{ width: "100vh", height: 600 }}></div>;
 };
