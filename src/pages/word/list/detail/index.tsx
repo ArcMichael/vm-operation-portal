@@ -1,7 +1,6 @@
 import LayoutWord from "@/components/Layout/layout-word";
-import { Tag, Space, Table } from "antd";
+import { Table } from "antd";
 import { ColumnsType } from "antd/es/table";
-// import Table, { ColumnsType } from "antd/es/table";
 import React from "react";
 
 interface DataType {
