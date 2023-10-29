@@ -1,6 +1,28 @@
+## [0.1.17-rc.0](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.16...v0.1.17-rc.0) (2023-10-29)
+
+
+### Features
+
+* **any data:** any update ([583f157](https://github.com/ArcMichael/vm-operation-portal/commit/583f157db1f7e395e848f57e501372de8c6cdaef))
+* **change data file:** any ([aca8905](https://github.com/ArcMichael/vm-operation-portal/commit/aca8905e30825559342edecc7fcc03f7f62d5d66))
+* **new data with 1022:** any ([9908b63](https://github.com/ArcMichael/vm-operation-portal/commit/9908b63153398677dedfea392463d5ebcfc9c61a))
+* **update:** udate ([4131dd0](https://github.com/ArcMichael/vm-operation-portal/commit/4131dd0e606c6622422b613fc4c8d78758bba4bb))
+
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.1.17-rc.0](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.16...v0.1.17-rc.0) (2023-10-29)
+
+
+### Features
+
+* **any data:** any update ([583f157](https://github.com/ArcMichael/vm-operation-portal/commit/583f157db1f7e395e848f57e501372de8c6cdaef))
+* **change data file:** any ([aca8905](https://github.com/ArcMichael/vm-operation-portal/commit/aca8905e30825559342edecc7fcc03f7f62d5d66))
+* **new data with 1022:** any ([9908b63](https://github.com/ArcMichael/vm-operation-portal/commit/9908b63153398677dedfea392463d5ebcfc9c61a))
+* **update:** udate ([4131dd0](https://github.com/ArcMichael/vm-operation-portal/commit/4131dd0e606c6622422b613fc4c8d78758bba4bb))
 
 ### [0.1.16](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.15...v0.1.16) (2023-10-22)
 
