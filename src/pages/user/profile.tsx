@@ -14,6 +14,9 @@ const Component: React.FC = () => {
       <Descriptions.Item label="Expires">
         {status === "authenticated" ? session.expires : ""}
       </Descriptions.Item>
+      <Descriptions.Item label="accessToken">
+        {session?.accessToken ? session.accessToken : ""}
+      </Descriptions.Item>
 
       {/* <Descriptions.Item label="Telephone">1810000000</Descriptions.Item> */}
       {/* <Descriptions.Item label="Live">Hangzhou, Zhejiang</Descriptions.Item> */}

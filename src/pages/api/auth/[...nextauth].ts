@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions, Profile } from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
 const KeycloakConfig = {
@@ -6,6 +6,10 @@ const KeycloakConfig = {
   clientSecret: process.env.KEYCLOAK_SECRET,
   issuer: process.env.KEYCLOAK_ISSUER,
 };
+
+interface CustomProfile extends Profile {
+  accessToken?: string;
+}
 
 console.log(KeycloakConfig);
 
@@ -24,22 +28,29 @@ export const authOptions: NextAuthOptions = {
     signOut: "/auth/signout",
   },
   callbacks: {
-    async jwt({ token }) {
-      console.log("jwt", token);
+    async jwt({ token, account, profile }) {
+      // console.log("profile--", profile);
       // token.userRole = "admin";
+      if (account && profile) {
+        token.accessToken = (profile as CustomProfile).accessToken;
+      }
       return token;
     },
-    async signIn(sign) {
-      console.log("sign", sign);
+    async signIn({ profile }) {
+      console.log(profile);
       return true;
     },
     async redirect(redirect) {
       console.log("redirect", redirect);
       return "/smc";
     },
-    async session(session) {
-      console.log("session", session);
-      return session.session;
+    async session({ session, token }) {
+      // 这里检查 token 对象中是否有 accessToken
+      if (token.accessToken) {
+        // 然后将它添加到 session 对象中
+        (session as any).accessToken = token.accessToken;
+      }
+      return session;
     },
   },
 };
