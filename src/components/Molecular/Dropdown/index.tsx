@@ -26,7 +26,7 @@ const MolecularDropdown: React.FC = () => {
       <Button size="middle" style={{ marginRight: "2vh" }}>
         <Space>
           Click me
-          <DownOutlined />
+          <DownOutlined {...({} as any)} />
         </Space>
       </Button>
     </Dropdown>

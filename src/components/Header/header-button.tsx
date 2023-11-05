@@ -17,9 +17,9 @@ const HeaderButton: React.FC = () => {
         type="text"
         icon={
           onActionService.onCollapse ? (
-            <MenuUnfoldOutlined />
+            <MenuUnfoldOutlined {...({} as any)} />
           ) : (
-            <MenuFoldOutlined />
+            <MenuFoldOutlined {...({} as any)} />
           )
         }
         onClick={() =>

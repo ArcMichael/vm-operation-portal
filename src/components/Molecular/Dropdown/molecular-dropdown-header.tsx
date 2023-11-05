@@ -17,7 +17,7 @@ const MolecularDropdownHeader: React.FC = () => {
       <Button size="middle" style={{ marginRight: "2vh" }}>
         <Space>
           {status === "authenticated" ? session.user?.name : ""}
-          <DownOutlined />
+          <DownOutlined {...({} as any)} />
         </Space>
       </Button>
     </Dropdown>

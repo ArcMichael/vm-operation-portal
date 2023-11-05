@@ -86,7 +86,9 @@ const gymConvertRouteToMenu = (
 ): MenuConfig => {
   const menuConfig: MenuConfig = {
     key: parentKey,
-    icon: gymContextIconMap[route.context] || <AppstoreOutlined />, // Check gymContextIconMap too
+    icon: gymContextIconMap[route.context] || (
+      <AppstoreOutlined {...({} as any)} />
+    ), // Check gymContextIconMap too
     label: route.action ? (
       <a onClick={() => route.action!()}>{route.context}</a>
     ) : (
