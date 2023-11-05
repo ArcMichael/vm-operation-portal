@@ -67,7 +67,9 @@ const smcConvertRouteToMenu = (
 ): MenuConfig => {
   const menuConfig: MenuConfig = {
     key: parentKey,
-    icon: contextIconMap[route.context] || <AppstoreOutlined />, // Check gymContextIconMap too
+    icon: contextIconMap[route.context] || (
+      <AppstoreOutlined {...({} as any)} />
+    ), // Check gymContextIconMap too
     label: route.action ? (
       <a onClick={() => route.action!()}>{route.context}</a>
     ) : (

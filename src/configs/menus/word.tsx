@@ -65,7 +65,9 @@ const wordConvertRouteToMenu = (
 ): MenuConfig => {
   const menuConfig: MenuConfig = {
     key: parentKey,
-    icon: wordContextIconMap[route.context] || <AppstoreOutlined />, // Check wordContextIconMap too
+    icon: wordContextIconMap[route.context] || (
+      <AppstoreOutlined {...({} as any)} />
+    ), // Check wordContextIconMap too
     label: route.action ? (
       <a onClick={() => route.action!()}>{route.context}</a>
     ) : (
@@ -100,9 +102,9 @@ const wordConvertRouteToMenu = (
 
 // Mapping of gym contexts to their corresponding icons
 const wordContextIconMap: Record<string, React.ReactNode> = {
-  REPORT: <LineChartOutlined />,
-  LIST: <OrderedListOutlined />,
-  SUBMIT: <UploadOutlined />,
+  REPORT: <LineChartOutlined {...({} as any)} />,
+  LIST: <OrderedListOutlined {...({} as any)} />,
+  SUBMIT: <UploadOutlined {...({} as any)} />,
 };
 
 // Convert route configs to menu configs
