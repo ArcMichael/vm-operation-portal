@@ -8,7 +8,7 @@ RUN npm config set loglevel verbose
 
 # RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
-RUN npm install pnpm -g --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
+RUN npm install yarn -g --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
 RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
 
@@ -19,7 +19,7 @@ RUN npm config set registry http://nexus.dependency.in.mly0110.org.cn:8081/repos
 
 # npm install dependency
 # RUN npm install --registry=http://nexus.dependency.in.mly0110.org.cn:8081/repository/group-npm/
-RUN pnpm install
+RUN yarn
 
 RUN npm run build
 

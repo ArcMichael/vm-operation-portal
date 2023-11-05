@@ -123,12 +123,12 @@ const gymConvertRouteToMenu = (
 
 // Mapping of gym contexts to their corresponding icons
 const gymContextIconMap: Record<string, React.ReactNode> = {
-  BOOK: <BookOutlined />,
-  MEMBER: <UserOutlined />,
-  RESOURCE: <FileOutlined />,
-  ROOM: <HomeOutlined />,
-  TAGS: <LikeOutlined />,
-  TEACHER: <TeamOutlined />,
+  BOOK: <BookOutlined {...({} as any)} />,
+  MEMBER: <UserOutlined {...({} as any)} />,
+  RESOURCE: <FileOutlined {...({} as any)} />,
+  ROOM: <HomeOutlined {...({} as any)} />,
+  TAGS: <LikeOutlined {...({} as any)} />,
+  TEACHER: <TeamOutlined {...({} as any)} />,
 };
 
 // Convert route configs to menu configs
