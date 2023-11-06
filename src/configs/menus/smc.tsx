@@ -40,9 +40,9 @@ const routeConfigs: RouteConfig[] = [
 ];
 
 const contextIconMap: { [context: string]: React.ReactNode } = {
-  smc: <AppstoreOutlined {...({} as any)} />,
-  user: <UserOutlined {...({} as any)} />,
-  profile: <UserSwitchOutlined {...({} as any)} />,
+  smc: <AppstoreOutlined />,
+  user: <UserOutlined />,
+  profile: <UserSwitchOutlined />,
 };
 
 const generateHeaderConfig = (

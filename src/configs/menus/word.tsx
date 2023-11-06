@@ -102,9 +102,9 @@ const wordConvertRouteToMenu = (
 
 // Mapping of gym contexts to their corresponding icons
 const wordContextIconMap: Record<string, React.ReactNode> = {
-  REPORT: <LineChartOutlined {...({} as any)} />,
-  LIST: <OrderedListOutlined {...({} as any)} />,
-  SUBMIT: <UploadOutlined {...({} as any)} />,
+  REPORT: <LineChartOutlined />,
+  LIST: <OrderedListOutlined />,
+  SUBMIT: <UploadOutlined />,
 };
 
 // Convert route configs to menu configs
