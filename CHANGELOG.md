@@ -1,3 +1,23 @@
+## [0.2.4](https://github.com/ArcMichael/vm-operation-portal/compare/v0.2.3...v0.2.4) (2023-11-06)
+
+
+### Features
+
+* **vscode.setting(eslint.validate),prettier,atomic(useauthtoken),...:** middle ([e32ac33](https://github.com/ArcMichael/vm-operation-portal/commit/e32ac33f85781e380c96a5cb6f81e027009581a6))
+
+
+
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.2.4](https://github.com/ArcMichael/vm-operation-portal/compare/v0.2.3...v0.2.4) (2023-11-06)
+
+
+### Features
+
+* **vscode.setting(eslint.validate),prettier,atomic(useauthtoken),...:** middle ([e32ac33](https://github.com/ArcMichael/vm-operation-portal/commit/e32ac33f85781e380c96a5cb6f81e027009581a6))
+
 ## [0.2.3](https://github.com/ArcMichael/vm-operation-portal/compare/v0.2.1...v0.2.3) (2023-11-06)
 
 
