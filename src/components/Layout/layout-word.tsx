@@ -14,7 +14,7 @@ const LayoutWord = (Comps: any) => {
 
         public render() {
             return (
-                <Layout style={{ height: '100vh' }}>
+                <Layout>
                     <SiderWord />
                     <Layout>
                         <HeaderGym />

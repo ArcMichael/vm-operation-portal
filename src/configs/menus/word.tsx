@@ -14,19 +14,19 @@ const wordRouteConfigs: RouteConfig[] = [
         context: 'REPORT',
         path: '/word/report',
         defaultOpenKeys: ['1'], // No need for open keys for top-level menu items
-        defaultSelectedKeys: [],
+        defaultSelectedKeys: ['1'],
     },
     {
         context: 'LIST',
         path: '/word/list',
         defaultOpenKeys: ['2'], // No need for open keys for top-level menu items
-        defaultSelectedKeys: [],
+        defaultSelectedKeys: ['2'],
     },
     {
         context: 'SUBMIT',
         path: '/word/submit',
         defaultOpenKeys: ['3'], // No need for open keys for top-level menu items
-        defaultSelectedKeys: [],
+        defaultSelectedKeys: ['3'],
     },
 ];
 

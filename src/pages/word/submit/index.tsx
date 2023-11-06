@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import LayoutWord from '@/components/Layout/layout-word';
 import { UploadOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
 import { Button, Input, message, Space, Upload } from 'antd';
 import useAuthToken from '@/components/Atomic/useAuthToken';
 import { useRouter } from 'next/router';
+import { SessionContextService } from '@/store/SessionContext';
 
 const { Search } = Input;
 
@@ -58,6 +59,9 @@ const useUploadProps = ({
 };
 
 const Component: React.FC = () => {
+    const { onActionService, setonActionService } = useContext(
+        SessionContextService
+    );
     const router = useRouter();
     const [uploadStatus, setUploadStatus] = useState('ready');
     const [uploadFileName, setUploadFileName] = useState('');
@@ -72,8 +76,16 @@ const Component: React.FC = () => {
         onUploadFileNameChange: setUploadFileName,
     });
 
-    const navigateToWordList = () => {
-        router.push(`/word/list?fileId=${uploadFileName}`);
+    const navigateToWordList = (
+        onActionService: any,
+        setonActionService: any
+    ) => {
+        setonActionService({
+            ...onActionService,
+            onDefaultOpenKeys: ['2'],
+            onDefaultSelectedKeys: ['2'],
+        }),
+            router.push(`/word/list/detail?fileId=${uploadFileName}`);
     };
 
     return (
@@ -89,7 +101,9 @@ const Component: React.FC = () => {
                 }
                 size="middle"
                 disabled={uploadStatus !== 'done'}
-                onSearch={navigateToWordList}
+                onSearch={() =>
+                    navigateToWordList(onActionService, setonActionService)
+                }
             />
         </Space>
     );
