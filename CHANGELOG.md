@@ -1,3 +1,33 @@
+## [0.2.1](https://github.com/ArcMichael/vm-operation-portal/compare/v0.2.0...v0.2.1) (2023-11-06)
+
+
+### Features
+
+* **bit:** bit ([613288c](https://github.com/ArcMichael/vm-operation-portal/commit/613288cbd7135a4905f343fc5baf588799bf3a59))
+* **change pnpm to yarn:** ci ([901cb26](https://github.com/ArcMichael/vm-operation-portal/commit/901cb26e0a1c232e09b847f54bc45aa3813a5e57))
+* **new version:** {...({} as any)} /> ([88b5fae](https://github.com/ArcMichael/vm-operation-portal/commit/88b5fae14956d4cacaad54288a0a50863c8b3383))
+* **package.json (fix rev):** any ([59ebf6d](https://github.com/ArcMichael/vm-operation-portal/commit/59ebf6d1d78c2a1746a8366c147ff5bf045b749c))
+* **set sesion:** any ([cf104ad](https://github.com/ArcMichael/vm-operation-portal/commit/cf104ad9aacc0c516fe602272a3df6889c73ebbe))
+* **version rev:** <LineChartOutlined {...({} as any)} />, ([7d6c359](https://github.com/ArcMichael/vm-operation-portal/commit/7d6c359bf8ef79807de3c316e36a3ed4b3d3e17d))
+
+
+
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.2.1](https://github.com/ArcMichael/vm-operation-portal/compare/v0.2.0...v0.2.1) (2023-11-06)
+
+
+### Features
+
+* **bit:** bit ([613288c](https://github.com/ArcMichael/vm-operation-portal/commit/613288cbd7135a4905f343fc5baf588799bf3a59))
+* **change pnpm to yarn:** ci ([901cb26](https://github.com/ArcMichael/vm-operation-portal/commit/901cb26e0a1c232e09b847f54bc45aa3813a5e57))
+* **new version:** {...({} as any)} /> ([88b5fae](https://github.com/ArcMichael/vm-operation-portal/commit/88b5fae14956d4cacaad54288a0a50863c8b3383))
+* **package.json (fix rev):** any ([59ebf6d](https://github.com/ArcMichael/vm-operation-portal/commit/59ebf6d1d78c2a1746a8366c147ff5bf045b749c))
+* **set sesion:** any ([cf104ad](https://github.com/ArcMichael/vm-operation-portal/commit/cf104ad9aacc0c516fe602272a3df6889c73ebbe))
+* **version rev:** <LineChartOutlined {...({} as any)} />, ([7d6c359](https://github.com/ArcMichael/vm-operation-portal/commit/7d6c359bf8ef79807de3c316e36a3ed4b3d3e17d))
+
 # [0.2.0](https://github.com/ArcMichael/vm-operation-portal/compare/v0.1.22...v0.2.0) (2023-10-29)
 
 
