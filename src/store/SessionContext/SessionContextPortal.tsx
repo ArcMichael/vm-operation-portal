@@ -1,48 +1,51 @@
 import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useEffect,
-  useState,
-} from "react";
+    Dispatch,
+    SetStateAction,
+    createContext,
+    useEffect,
+    useState,
+} from 'react';
 
 interface OnActionPortalType<T> {
-  onCollapse: boolean;
-  onDefaultSelectedKeys: T;
-  onDefaultOpenKeys: T;
+    onCollapse: boolean;
+    onDefaultSelectedKeys: T;
+    onDefaultOpenKeys: T;
 }
 
 interface SessionContextPortalType<T> {
-  onActionPortal: T;
-  setonActionPortal: Dispatch<SetStateAction<T>>;
+    onActionPortal: T;
+    setonActionPortal: Dispatch<SetStateAction<T>>;
 }
 
 const SessionContext = createContext<
-  SessionContextPortalType<OnActionPortalType<string[]>>
+    SessionContextPortalType<OnActionPortalType<string[]>>
 >({} as SessionContextPortalType<OnActionPortalType<string[]>>);
 
 const initialOnActionPortal: OnActionPortalType<string[]> = {
-  onCollapse: false,
-  onDefaultSelectedKeys: ["1"],
-  onDefaultOpenKeys: ["1"],
+    onCollapse: false,
+    onDefaultSelectedKeys: ['1'],
+    onDefaultOpenKeys: ['1'],
 };
 
 const useStateActionPortal = () => {
-  const [onActionPortal, setonActionPortal] = useState(initialOnActionPortal);
+    const [onActionPortal, setonActionPortal] = useState(initialOnActionPortal);
 
-  useEffect(() => {
-    const onActionPortal = sessionStorage.getItem("onActionPortal");
-    if (onActionPortal) {
-      setonActionPortal(JSON.parse(onActionPortal));
-    }
-  }, []);
+    useEffect(() => {
+        const onActionPortal = sessionStorage.getItem('onActionPortal');
+        if (onActionPortal) {
+            setonActionPortal(JSON.parse(onActionPortal));
+        }
+    }, []);
 
-  useEffect(() => {
-    console.log("onActionPortal", onActionPortal);
-    sessionStorage.setItem("onActionPortal", JSON.stringify(onActionPortal));
-  }, [onActionPortal]);
+    useEffect(() => {
+        console.log('onActionPortal', onActionPortal);
+        sessionStorage.setItem(
+            'onActionPortal',
+            JSON.stringify(onActionPortal)
+        );
+    }, [onActionPortal]);
 
-  return [onActionPortal, setonActionPortal];
+    return [onActionPortal, setonActionPortal];
 };
 
 export default SessionContext;

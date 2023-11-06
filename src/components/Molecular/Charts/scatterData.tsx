@@ -1,94 +1,94 @@
 const scatterData = {
-  title: {
-    text: "Male and female height and weight distribution",
-    subtext: "Data from: Heinz 2003",
-  },
-  grid: {
-    left: "3%",
-    right: "7%",
-    bottom: "7%",
-    containLabel: true,
-  },
-  tooltip: {
-    // trigger: 'axis',
-    showDelay: 0,
-    formatter: function (params: any) {
-      if (params.value.length > 1) {
-        return (
-          params.seriesName +
-          " :<br/>" +
-          params.value[0] +
-          "cm " +
-          params.value[1] +
-          "kg "
-        );
-      } else {
-        return (
-          params.seriesName +
-          " :<br/>" +
-          params.name +
-          " : " +
-          params.value +
-          "kg "
-        );
-      }
+    title: {
+        text: 'Male and female height and weight distribution',
+        subtext: 'Data from: Heinz 2003',
     },
-    axisPointer: {
-      show: true,
-      type: "cross",
-      lineStyle: {
-        type: "dashed",
-        width: 1,
-      },
+    grid: {
+        left: '3%',
+        right: '7%',
+        bottom: '7%',
+        containLabel: true,
     },
-  },
-  toolbox: {
-    feature: {
-      dataZoom: {},
-      brush: {
-        type: ["rect", "polygon", "clear"],
-      },
+    tooltip: {
+        // trigger: 'axis',
+        showDelay: 0,
+        formatter: function (params: any) {
+            if (params.value.length > 1) {
+                return (
+                    params.seriesName +
+                    ' :<br/>' +
+                    params.value[0] +
+                    'cm ' +
+                    params.value[1] +
+                    'kg '
+                );
+            } else {
+                return (
+                    params.seriesName +
+                    ' :<br/>' +
+                    params.name +
+                    ' : ' +
+                    params.value +
+                    'kg '
+                );
+            }
+        },
+        axisPointer: {
+            show: true,
+            type: 'cross',
+            lineStyle: {
+                type: 'dashed',
+                width: 1,
+            },
+        },
     },
-  },
-  brush: {},
-  legend: {
-    data: ["Female", "Male"],
-    left: "center",
-    bottom: 10,
-  },
-  xAxis: [
-    {
-      type: "value",
-      scale: true,
-      axisLabel: {
-        formatter: "{value} cm",
-      },
-      splitLine: {
-        show: false,
-      },
+    toolbox: {
+        feature: {
+            dataZoom: {},
+            brush: {
+                type: ['rect', 'polygon', 'clear'],
+            },
+        },
     },
-  ],
-  yAxis: [
-    {
-      type: "value",
-      scale: true,
-      axisLabel: {
-        formatter: "{value} kg",
-      },
-      splitLine: {
-        show: false,
-      },
+    brush: {},
+    legend: {
+        data: ['Female', 'Male'],
+        left: 'center',
+        bottom: 10,
     },
-  ],
-  series: [
-    {
-      name: "Female",
-      type: "scatter",
-      emphasis: {
-        focus: "series",
-      },
-      // prettier-ignore
-      data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6],
+    xAxis: [
+        {
+            type: 'value',
+            scale: true,
+            axisLabel: {
+                formatter: '{value} cm',
+            },
+            splitLine: {
+                show: false,
+            },
+        },
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            scale: true,
+            axisLabel: {
+                formatter: '{value} kg',
+            },
+            splitLine: {
+                show: false,
+            },
+        },
+    ],
+    series: [
+        {
+            name: 'Female',
+            type: 'scatter',
+            emphasis: {
+                focus: 'series',
+            },
+            // prettier-ignore
+            data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6],
             [170.0, 59.0], [159.1, 47.6], [166.0, 69.8], [176.2, 66.8], [160.2, 75.2],
             [172.5, 55.2], [170.9, 54.2], [172.9, 62.5], [153.4, 42.0], [160.0, 50.0],
             [147.2, 49.8], [168.2, 49.2], [175.0, 73.2], [157.0, 47.8], [167.6, 68.8],
@@ -141,48 +141,48 @@ const scatterData = {
             [169.5, 67.3], [160.0, 75.5], [172.7, 68.2], [162.6, 61.4], [157.5, 76.8],
             [176.5, 71.8], [164.4, 55.5], [160.7, 48.6], [174.0, 66.4], [163.8, 67.3]
             ],
-      markArea: {
-        silent: true,
-        itemStyle: {
-          color: "transparent",
-          borderWidth: 1,
-          borderType: "dashed",
-        },
-        data: [
-          [
-            {
-              name: "Female Data Range",
-              xAxis: "min",
-              yAxis: "min",
+            markArea: {
+                silent: true,
+                itemStyle: {
+                    color: 'transparent',
+                    borderWidth: 1,
+                    borderType: 'dashed',
+                },
+                data: [
+                    [
+                        {
+                            name: 'Female Data Range',
+                            xAxis: 'min',
+                            yAxis: 'min',
+                        },
+                        {
+                            xAxis: 'max',
+                            yAxis: 'max',
+                        },
+                    ],
+                ],
             },
-            {
-              xAxis: "max",
-              yAxis: "max",
+            markPoint: {
+                data: [
+                    { type: 'max', name: 'Max' },
+                    { type: 'min', name: 'Min' },
+                ],
             },
-          ],
-        ],
-      },
-      markPoint: {
-        data: [
-          { type: "max", name: "Max" },
-          { type: "min", name: "Min" },
-        ],
-      },
-      markLine: {
-        lineStyle: {
-          type: "solid",
+            markLine: {
+                lineStyle: {
+                    type: 'solid',
+                },
+                data: [{ type: 'average', name: 'AVG' }, { xAxis: 160 }],
+            },
         },
-        data: [{ type: "average", name: "AVG" }, { xAxis: 160 }],
-      },
-    },
-    {
-      name: "Male",
-      type: "scatter",
-      emphasis: {
-        focus: "series",
-      },
-      // prettier-ignore
-      data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7], [186.5, 72.6], [187.2, 78.8],
+        {
+            name: 'Male',
+            type: 'scatter',
+            emphasis: {
+                focus: 'series',
+            },
+            // prettier-ignore
+            data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7], [186.5, 72.6], [187.2, 78.8],
             [181.5, 74.8], [184.0, 86.4], [184.5, 78.4], [175.0, 62.0], [184.0, 81.6],
             [180.0, 76.6], [177.8, 83.6], [192.0, 90.0], [176.0, 74.6], [174.0, 71.0],
             [184.0, 79.6], [192.7, 93.8], [171.5, 70.0], [173.0, 72.4], [176.0, 85.9],
@@ -233,40 +233,40 @@ const scatterData = {
             [170.2, 62.3], [177.8, 82.7], [179.1, 79.1], [190.5, 98.2], [177.8, 84.1],
             [180.3, 83.2], [180.3, 83.2]
             ],
-      markArea: {
-        silent: true,
-        itemStyle: {
-          color: "transparent",
-          borderWidth: 1,
-          borderType: "dashed",
-        },
-        data: [
-          [
-            {
-              name: "Male Data Range",
-              xAxis: "min",
-              yAxis: "min",
+            markArea: {
+                silent: true,
+                itemStyle: {
+                    color: 'transparent',
+                    borderWidth: 1,
+                    borderType: 'dashed',
+                },
+                data: [
+                    [
+                        {
+                            name: 'Male Data Range',
+                            xAxis: 'min',
+                            yAxis: 'min',
+                        },
+                        {
+                            xAxis: 'max',
+                            yAxis: 'max',
+                        },
+                    ],
+                ],
             },
-            {
-              xAxis: "max",
-              yAxis: "max",
+            markPoint: {
+                data: [
+                    { type: 'max', name: 'Max' },
+                    { type: 'min', name: 'Min' },
+                ],
             },
-          ],
-        ],
-      },
-      markPoint: {
-        data: [
-          { type: "max", name: "Max" },
-          { type: "min", name: "Min" },
-        ],
-      },
-      markLine: {
-        lineStyle: {
-          type: "solid",
+            markLine: {
+                lineStyle: {
+                    type: 'solid',
+                },
+                data: [{ type: 'average', name: 'Average' }, { xAxis: 170 }],
+            },
         },
-        data: [{ type: "average", name: "Average" }, { xAxis: 170 }],
-      },
-    },
-  ],
+    ],
 };
 export default scatterData;

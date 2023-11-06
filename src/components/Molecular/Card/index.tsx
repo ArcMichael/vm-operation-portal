@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const MolecularCard: React.FC = () => {
-  return <></>;
+    return <></>;
 };
 
 export default MolecularCard;

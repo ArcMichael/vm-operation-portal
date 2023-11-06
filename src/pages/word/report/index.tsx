@@ -1,10 +1,10 @@
-import StackedColumn from "@/components/Molecular/Charts/stack/stack-column";
-import LayoutWord from "@/components/Layout/layout-word";
-import React from "react";
-import columnData from "@/data/word/report/column-data";
+import StackedColumn from '@/components/Molecular/Charts/stack/stack-column';
+import LayoutWord from '@/components/Layout/layout-word';
+import React from 'react';
+import columnData from '@/data/word/report/column-data';
 
 const Component: React.FC = () => (
-  <StackedColumn stackedColumnData={columnData} />
+    <StackedColumn stackedColumnData={columnData} />
 );
 
 export default LayoutWord(Component);
