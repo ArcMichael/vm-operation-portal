@@ -3,7 +3,7 @@ import LayoutWord from '@/components/Layout/layout-word';
 import { Button, DatePicker, Flex, Table, message } from 'antd';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { fetchWords } from '@/services/wordService';
+import { fetchWords, saveWords } from '@/services/wordService';
 import { wordTableColumns } from '@/components/Molecular/Table/molecular-table-word';
 import type { DataType } from '@/components/Molecular/Table/molecular-table-word';
 
@@ -18,11 +18,18 @@ const Component: React.FC = () => {
     // 使用自定义钩子来获取 token
     const token = useAuthToken();
 
-    const onSave = () => {
-        if (selectedDate !== '' && selectedTable.length > 0) {
-            console.log('selectedDate', selectedDate);
-            console.log('selectedTable', selectedTable);
-            // 上传
+    const onSave = async () => {
+        if (selectedDate && selectedTable.length > 0) {
+            try {
+                messageApi.loading('Saving data...');
+                // 调用保存数据的服务函数
+                await saveWords(selectedTable, selectedDate, token);
+                messageApi.success('Data saved successfully');
+            } catch (error) {
+                messageApi.error('Error saving data: ' + error);
+            }
+        } else {
+            messageApi.error('Please select a date and at least one word.');
         }
     };
 
