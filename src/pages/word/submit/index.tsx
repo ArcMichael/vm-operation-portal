@@ -34,9 +34,10 @@ const useUploadProps = ({
     onUploadStatusChange,
     onUploadFileNameChange,
 }: IUseUploadProps): UploadProps => {
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/csv/upload`;
     return {
         name: 'file',
-        action: 'https://api.mly0110.org.cn:8444/word/word/upload/csv',
+        action: apiUrl,
         headers: {
             token,
         },

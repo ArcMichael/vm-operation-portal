@@ -20,6 +20,8 @@ const Component: React.FC = () => {
 
     const onSave = () => {
         if (selectedDate !== '' && selectedTable.length > 0) {
+            console.log('selectedDate', selectedDate);
+            console.log('selectedTable', selectedTable);
             // 上传
         }
     };
@@ -29,8 +31,8 @@ const Component: React.FC = () => {
             messageApi.loading('Loading data...');
             const originalData = await fetchWords(fileId, token);
             const transformedData: DataType[] = originalData.map(
-                (item: any) => ({
-                    key: String(item['#']), // 或其他独一无二的属性
+                (item: any, index: number) => ({
+                    key: index + 1, // 或其他独一无二的属性
                     word: item['单词'],
                     phonetic: item['音标'],
                     meaning: item['解释'], // 清除换行符
