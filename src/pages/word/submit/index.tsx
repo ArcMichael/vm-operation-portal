@@ -85,7 +85,7 @@ const Component: React.FC = () => {
             onDefaultOpenKeys: ['2'],
             onDefaultSelectedKeys: ['2'],
         }),
-            router.push(`/word/list/detail?fileId=${uploadFileName}`);
+            router.push(`/word/list/confrim?fileId=${uploadFileName}`);
     };
 
     return (

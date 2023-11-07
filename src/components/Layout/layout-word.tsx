@@ -4,7 +4,7 @@ import React from 'react';
 import SiderWord from '@/components/Sider/sider-word';
 import ContentBrandcrumb from '@/components/Content/content-brandcrumb';
 import Footer from '@/components/Footer/footer';
-import HeaderGym from '@/components/Header/header-common';
+import HeaderCommon from '@/components/Header/header-common';
 
 const LayoutWord = (Comps: any) => {
     return class extends PureComponent {
@@ -14,10 +14,10 @@ const LayoutWord = (Comps: any) => {
 
         public render() {
             return (
-                <Layout>
+                <Layout style={{ minHeight: '100vh' }}>
                     <SiderWord />
                     <Layout>
-                        <HeaderGym />
+                        <HeaderCommon />
                         <ContentBrandcrumb Brandcrumb>
                             <Comps />
                         </ContentBrandcrumb>
