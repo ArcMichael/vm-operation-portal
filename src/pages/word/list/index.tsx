@@ -54,7 +54,9 @@ const Component: React.FC = () => {
                     <Button
                         type="link"
                         onClick={() =>
-                            router.push(`/word/list/detail?${record.studyDate}`)
+                            router.push(
+                                `/word/list/detail?date=${record.studyDate}`
+                            )
                         }
                     >
                         Details
@@ -95,11 +97,7 @@ const Component: React.FC = () => {
         loadData();
     }, []); // This useEffect runs when `fileId` changes);
 
-    return (
-        <>
-            <Table columns={columns} dataSource={wordData} />
-        </>
-    );
+    return <Table columns={columns} dataSource={wordData} />;
 };
 
 export default LayoutWord(Component);

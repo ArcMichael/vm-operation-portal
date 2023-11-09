@@ -1,67 +1,95 @@
+import useAuthToken from '@/components/Atomic/useAuthToken';
+import useMessageApi from '@/components/Atomic/useMessageApi';
 import LayoutWord from '@/components/Layout/layout-word';
-import { Space, Table } from 'antd';
+import { getDetailWithDate } from '@/services/wordService';
+import { Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 // import Table, { ColumnsType } from "antd/es/table";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface DataType {
     key: React.Key;
-    studyDate: Date;
-    newWordsLearned: number;
+    studyDate: string;
     wordsRemaining: number;
+    phonetic: string;
+    meaning: string;
+    recordDate: string;
 }
 
-const columns: ColumnsType<DataType> = [
-    {
-        title: '日期',
-        dataIndex: 'date',
-        key: 'studyDate',
-    },
-    {
-        title: '新增',
-        dataIndex: 'newWordsLearned',
-        key: 'newWordsLearned',
-    },
-    {
-        title: '遗失',
-        dataIndex: 'wordsRemaining',
-        key: 'wordsRemaining',
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <Link href={`/word/list/detail?${record.studyDate}`}>
-                    Details
-                </Link>
-            </Space>
-        ),
-    },
-];
+const Component: React.FC = () => {
+    const router = useRouter();
+    const { messageLoading, messageSuccess, messageError, messageWarning } =
+        useMessageApi();
+    const [Date, setDate] = useState('');
+    const [tableData, setTableData] = useState<DataType[]>([]);
 
-const data: DataType[] = [
-    {
-        key: 1,
-        studyDate: new Date('2023-10-15'),
-        newWordsLearned: 100,
-        wordsRemaining: 50,
-    },
-    {
-        key: 2,
-        studyDate: new Date('2023-10-16'),
-        newWordsLearned: 110,
-        wordsRemaining: 40,
-    },
-    {
-        key: 3,
-        studyDate: new Date('2023-10-17'),
-        newWordsLearned: 120,
-        wordsRemaining: 30,
-    },
-];
+    // 使用自定义钩子来获取 token
+    const token = useAuthToken();
 
-const Component: React.FC = () => <Table columns={columns} dataSource={data} />;
+    const loadData = async () => {
+        try {
+            messageLoading('Loading data...');
+            const originalData = await getDetailWithDate(Date, token);
+            const transformedData: DataType[] = originalData.map(
+                (item: any, index: number) => ({
+                    key: index + 1, // 或其他独一无二的属性
+                    meaning: item.meaning, // 清除换行符
+                    wordProficiencyWord: item.wordProficiencyWord,
+                    phonetic: item.phonetic,
+                    recordDate: item.recordDate,
+                })
+            );
+            setTableData(transformedData);
+            messageSuccess('Data loaded successfully');
+        } catch (error) {
+            messageError('Error fetching data: ' + error);
+        }
+    };
+
+    useEffect(() => {
+        // Check if the router is ready and if the query parameters are available
+        if (router.isReady) {
+            // Access the query parameters using router.query
+            const queryDate = router.query.date;
+            // If the parameter is available, update the state
+            if (queryDate && typeof queryDate === 'string') {
+                setDate(queryDate);
+            }
+        }
+    }, [router.isReady, router.query]);
+
+    useEffect(() => {
+        if (Date) {
+            messageWarning('Start loading');
+            loadData();
+        }
+    }, [Date]); // This useEffect runs when `fileId` changes);
+
+    const columns: ColumnsType<DataType> = [
+        {
+            title: 'recordDate',
+            dataIndex: 'recordDate',
+            key: 'recordDate',
+        },
+        {
+            title: 'word',
+            dataIndex: 'wordProficiencyWord',
+            key: 'wordProficiencyWord',
+        },
+        {
+            title: 'phonetic',
+            dataIndex: 'phonetic',
+            key: 'phonetic',
+        },
+        {
+            title: 'meaning',
+            dataIndex: 'meaning',
+            key: 'meaning',
+        },
+    ];
+
+    return <Table columns={columns} dataSource={tableData} />;
+};
 
 export default LayoutWord(Component);
