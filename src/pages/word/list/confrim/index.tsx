@@ -1,41 +1,43 @@
 import useAuthToken from '@/components/Atomic/useAuthToken';
 import LayoutWord from '@/components/Layout/layout-word';
-import { Button, DatePicker, Flex, Table, message } from 'antd';
+import { Button, DatePicker, Flex, Table } from 'antd';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { fetchWords, saveWords } from '@/services/wordService';
 import { wordTableColumns } from '@/components/Molecular/Table/molecular-table-word';
 import type { DataType } from '@/components/Molecular/Table/molecular-table-word';
+import useMessageApi from '@/components/Atomic/useMessageApi';
 
 const Component: React.FC = () => {
     const router = useRouter();
     const [fileId, setFileId] = useState('');
-    const [messageApi, contextHolder] = message.useMessage();
     const [tableData, setTableData] = useState<DataType[]>([]);
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedTable, setSelectedTable] = useState<DataType[]>([]);
     const [saveDisable, setSaveDisable] = useState<boolean>(true);
+    const { messageLoading, messageSuccess, messageError, messageWarning } =
+        useMessageApi();
     // 使用自定义钩子来获取 token
     const token = useAuthToken();
 
     const onSave = async () => {
         if (selectedDate && selectedTable.length > 0) {
             try {
-                messageApi.loading('Saving data...');
+                messageLoading('Saving data...');
                 // 调用保存数据的服务函数
                 await saveWords(selectedTable, selectedDate, token);
-                messageApi.success('Data saved successfully');
+                messageSuccess('Data saved successfully');
             } catch (error) {
-                messageApi.error('Error saving data: ' + error);
+                messageError('Error saving data: ' + error);
             }
         } else {
-            messageApi.error('Please select a date and at least one word.');
+            messageError('Please select a date and at least one word.');
         }
     };
 
     const loadData = async () => {
         try {
-            messageApi.loading('Loading data...');
+            messageLoading('Loading data...');
             const originalData = await fetchWords(fileId, token);
             const transformedData: DataType[] = originalData.map(
                 (item: any, index: number) => ({
@@ -46,9 +48,9 @@ const Component: React.FC = () => {
                 })
             );
             setTableData(transformedData);
-            messageApi.success('Data loaded successfully');
+            messageSuccess('Data loaded successfully');
         } catch (error) {
-            messageApi.error('Error fetching data: ' + error);
+            messageError('Error fetching data: ' + error);
         }
     };
 
@@ -74,14 +76,13 @@ const Component: React.FC = () => {
 
     useEffect(() => {
         if (fileId) {
-            messageApi.warning('Start loading');
+            messageWarning('Start loading');
             loadData();
         }
     }, [fileId]); // This useEffect runs when `fileId` changes);
 
     return (
         <>
-            {contextHolder}
             <Flex
                 wrap="wrap"
                 gap="small"
@@ -114,6 +115,7 @@ const Component: React.FC = () => {
                         selectedRowKeys: React.Key[],
                         selectedRows: DataType[]
                     ) => {
+                        console.log(selectedRows);
                         setSelectedTable(selectedRows);
                     },
                     getCheckboxProps: (record: DataType) => ({

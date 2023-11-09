@@ -1,76 +1,105 @@
+import useAuthToken from '@/components/Atomic/useAuthToken';
+import useMessageApi from '@/components/Atomic/useMessageApi';
 import LayoutWord from '@/components/Layout/layout-word';
-import { Space, Table } from 'antd';
+import { getWordLearningData } from '@/services/wordService';
+import { Button, Space, Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 // import Table, { ColumnsType } from "antd/es/table";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface DataType {
-    key: string;
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
+    key: React.Key;
+    studyDate: string;
+    totalWords: number;
+    newWordsLearned: number;
+    wordsRemaining: number;
 }
 
-const columns: ColumnsType<DataType> = [
-    {
-        title: 'Id',
-        dataIndex: 'key',
-        key: 'id',
-        render: (text) => <a>{text}</a>,
-    },
-    {
-        title: '日期',
-        dataIndex: 'age',
-        key: 'age',
-    },
-    {
-        title: 'New',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Leftover',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Details {record.name}</a>
-                <Link href={`/word/list/detail?2023-10-15`}>2023-10-15</Link>
-            </Space>
-        ),
-    },
-];
+const Component: React.FC = () => {
+    const router = useRouter();
+    const [wordData, setWordData] = useState<DataType[]>([]); // State to hold the fetched data
+    const { messageLoading, messageSuccess, messageError, messageWarning } =
+        useMessageApi();
 
-const data: DataType[] = [
-    {
-        key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
+    // 使用自定义钩子来获取 token
+    const token = useAuthToken();
 
-const Component: React.FC = () => <Table columns={columns} dataSource={data} />;
+    const columns: ColumnsType<DataType> = [
+        {
+            title: 'study date',
+            dataIndex: 'studyDate',
+            key: 'studyDate',
+        },
+        {
+            title: 'total Words',
+            dataIndex: 'totalWords',
+            key: 'totalWords',
+        },
+        {
+            title: 'new Words Learned',
+            dataIndex: 'newWordsLearned',
+            key: 'newWordsLearned',
+        },
+        {
+            title: 'words Remaining',
+            dataIndex: 'wordsRemaining',
+            key: 'wordsRemaining',
+        },
+        {
+            title: 'Action',
+            key: 'action',
+            render: (_, record) => (
+                <Space size="middle">
+                    <Button
+                        type="link"
+                        onClick={() =>
+                            router.push(`/word/list/detail?${record.studyDate}`)
+                        }
+                    >
+                        Details
+                    </Button>
+                </Space>
+            ),
+        },
+    ];
+
+    const loadData = async () => {
+        try {
+            messageLoading('Loading data...');
+            // messageApi.loading('Loading data...');
+            // Assuming `getWordLearningData` is a function that makes an API call
+            // and returns the data in the expected format.
+            const fetchedData = await getWordLearningData(token);
+            // Transform data to match the DataType interface if needed
+            const transformedData = fetchedData.map(
+                (item: DataType, index: number) => ({
+                    key: index, // or use a unique id from the item if available
+                    studyDate: item.studyDate,
+                    totalWords: item.totalWords,
+                    newWordsLearned: item.newWordsLearned,
+                    wordsRemaining: item.wordsRemaining,
+                })
+            );
+            setWordData(transformedData); // Update the state with the transformed data
+            messageSuccess('Data loaded successfully');
+            // messageApi.success('Data loaded successfully');
+        } catch (error) {
+            messageError('Error fetching data');
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        messageWarning('Start Loading...');
+        loadData();
+    }, []); // This useEffect runs when `fileId` changes);
+
+    return (
+        <>
+            <Table columns={columns} dataSource={wordData} />
+        </>
+    );
+};
 
 export default LayoutWord(Component);
