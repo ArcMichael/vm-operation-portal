@@ -1,3 +1,5 @@
+This is a template to learn how to use next and next-auth to create a portal
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
